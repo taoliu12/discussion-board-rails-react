@@ -1,2 +1,7 @@
 <h1>All Posts</h1>
 <p>Find me in app/views/posts/update.html.erb</p>
+
+<% @posts.each do |p| %>
+    <h3><%= link_to p.title, post_path(p) %></h3>
+    <p>by <%= p.user.username %></p>
+<% end %>

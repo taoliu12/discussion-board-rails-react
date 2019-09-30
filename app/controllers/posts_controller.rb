@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :redirect_unauthorized_user, only: [:edit, :update, :destroy]
 
   def index
+    @posts = Post.all
   end
 
   def new
