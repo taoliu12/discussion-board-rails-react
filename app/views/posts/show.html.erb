@@ -1,3 +1,8 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.user.username %></p>
 <p><%= @post.body %></p>
+
+<%= form_for( [@post, @vote] ) do |f| %>
+    <%= f.hidden_field :value, value: 1 %>
+    <%= f.submit value: 'Upvote' %>
+<% end %>
