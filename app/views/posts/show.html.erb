@@ -7,4 +7,9 @@
     <%= f.submit value: 'Upvote' %>
 <% end %>
 
+<%= form_for( [@post, @vote] ) do |f| %>
+    <%= f.hidden_field :value, value: -1 %>
+    <%= f.submit value: 'Downvote' %>
+<% end %>
+
 <p><%= @vote_total %></p>
