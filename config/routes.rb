@@ -15,9 +15,15 @@ Rails.application.routes.draw do
     resources :votes, only: [:create]
   end
 
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:show] do
     resources :posts, only: [:index]
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:destroy]
+
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 end
