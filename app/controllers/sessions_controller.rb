@@ -3,6 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @user = User.find_by(username: params[:username])     
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.idgit status
+      redirect_to user_path(@user)
+    else
+      flash[:message] = 'Please try again'
+      redirect_to login_path
+    end     
   end
 
   def destroy
