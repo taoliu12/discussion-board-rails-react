@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id 
             flash[:message] = "Signup Successful"
-            redirect_to user_path(@user)
+            redirect_to posts_path
         else
             flash[:message] = "Please try again"
             render :new

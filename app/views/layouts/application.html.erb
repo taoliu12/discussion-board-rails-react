@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p><%= link_to  "Logout", logout_path, method: :delete %></p>
+    <% else %>
+      <p><%= link_to  "Login", login_path %> | <%= link_to  "Signup", signup_path %></p>
+    <% end %>
+
     <% flash.keys.each do |type| %>
       <div data-alert class="flash <%= type %> alert-box radius">
         <%= flash[type] %>
