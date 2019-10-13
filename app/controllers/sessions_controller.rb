@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])     
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.idgit status
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
-    else
+    else 
       flash[:message] = 'Please try again'
       redirect_to login_path
     end     

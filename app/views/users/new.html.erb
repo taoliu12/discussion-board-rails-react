@@ -1,12 +1,17 @@
 <h1>Signup</h1> 
+<% @user.errors.full_messages.each do |error| %>
+    <p><%= error %></p>
+<% end %>
 
 <%= form_for @user, url: '/signup' do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>    
-    
-    <%= f.submit %>
+    <div><%= f.label :username %></div>
+    <div><%= f.text_field :username %></div>
+
+    <div><%= f.label :password %></div>
+    <div><%= f.password_field :password %></div> 
+        
+    <div><%= f.label :password_confirmation %></div>
+    <div><%= f.password_field :password_confirmation %></div> 
+    <%= f.submit 'Sign Up' %>
 <% end %> 
  
