@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 
   def show     
      @vote = Vote.new 
+     @user_vote = current_user.votes.find_or_initialize_by(post: @post)
   end
 
   def edit     
