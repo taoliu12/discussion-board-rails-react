@@ -16,8 +16,12 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(params[:id])
-        @posts = @user.authored_posts              
+        @user = User.find_by(id: params[:id])
+        if @user
+            @posts = @user.authored_posts     
+        else
+            redirect_to root_path
+        end     
     end
     
 
