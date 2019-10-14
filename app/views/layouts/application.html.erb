@@ -10,7 +10,8 @@
   </head>
 
   <body>
-  <h2><%= link_to "Talkytok", posts_path %></h2>
+  <div class='container'>
+  <h2><%= link_to "Talkytalk", posts_path %></h2>
     <% if logged_in? %>
       <p>
         <%= link_to "New Post", new_post_path %> | 
@@ -28,6 +29,8 @@
         <%= flash[type] %>
       </div>
     <% end %>
-    <%= yield %>
+    
+      <%= yield %>
+    </div>
   </body>
 </html>

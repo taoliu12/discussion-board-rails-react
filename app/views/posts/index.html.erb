@@ -1,6 +1,8 @@
-<h1>All Posts</h1> 
+<h3>All Posts</h3> 
 
 <% @posts.each do |p| %>
-    <h3><%= link_to p.title, post_path(p) %></h3>
-    <p>by <%= p.user.username %></p>
+    <div class='container border shadow-sm rounded mt-2 p-2'>
+        <h4><%= link_to p.title, post_path(p) %></h4>
+        <p>by <%= p.user.username %></p>
+    </div>
 <% end %>
