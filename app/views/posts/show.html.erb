@@ -12,7 +12,7 @@
     <%= f.submit value: 'Downvote' %>
 <% end %>
 
-<p><%= @vote_total %></p>
+<p><%= @post.votes_total %></p>
 
 <% if @post.user == current_user %>
 <%= link_to  "Edit Post", edit_post_path(@post) %> | <%= link_to  "Delete Post", post_path(@post), method: :delete %>

@@ -25,9 +25,7 @@ class PostsController < ApplicationController
   end
 
   def show     
-     @vote = Vote.new
-     @vote_total = @post.votes.sum(&:value)
-    #  raise params.inspect
+     @vote = Vote.new 
   end
 
   def edit     

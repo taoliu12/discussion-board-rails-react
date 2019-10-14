@@ -1,8 +1,13 @@
-<h3>All Posts</h3> 
-
-<% @posts.each do |p| %>
+<% @posts.each do |post| %>
     <div class='container border shadow-sm rounded mt-2 p-2'>
-        <h4><%= link_to p.title, post_path(p) %></h4>
-        <p>by <%= link_to p.user.username, user_path(p.user) %></p>
+        <h4><%= post.votes_total%> <%= link_to post.title, post_path(post)%></h4>
+        <p>
+            by <%= link_to post.user.username, user_path(post.user) %>
+
+            <% if post.user == current_user %>
+                | <%= link_to  "Edit", edit_post_path(post) %> | 
+                <%= link_to  "Delete", post_path(post), method: :delete %>
+            <% end %>
+        </p>
     </div>
 <% end %>
