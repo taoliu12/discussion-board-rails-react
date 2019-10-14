@@ -1,5 +1,10 @@
-<h3>Your posts:</h3>
+<% if @user == current_user %>
+    <h3>Your posts:</h3>
+<% else %>
+    <h3><%= @user.username %>'s posts:</h3>
+<% end %>
+
 <% @posts.each do |p| %>
     <h3><%= link_to p.title, post_path(p) %></h3>
-    <p>by <%= p.user.username %></p>
+    <p>by <%= @user.username %></p>
 <% end %>

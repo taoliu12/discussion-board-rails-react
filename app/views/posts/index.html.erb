@@ -3,6 +3,6 @@
 <% @posts.each do |p| %>
     <div class='container border shadow-sm rounded mt-2 p-2'>
         <h4><%= link_to p.title, post_path(p) %></h4>
-        <p>by <%= p.user.username %></p>
+        <p>by <%= link_to p.user.username, user_path(p.user) %></p>
     </div>
 <% end %>
