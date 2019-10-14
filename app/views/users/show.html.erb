@@ -1,2 +1,5 @@
-<h1>user show</h1>
-
+<h3>Your posts:</h3>
+<% @posts.each do |p| %>
+    <h3><%= link_to p.title, post_path(p) %></h3>
+    <p>by <%= p.user.username %></p>
+<% end %>

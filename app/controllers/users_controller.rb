@@ -15,6 +15,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find_by(params[:id])
+        @posts = @user.authored_posts              
+    end
+    
+
     private
 
     def user_params

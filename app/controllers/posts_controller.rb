@@ -3,12 +3,7 @@ class PostsController < ApplicationController
   before_action :redirect_unauthorized_user, only: [:edit, :update, :destroy]
 
   def index
-    if params[:user_id]
-      @user = User.find_by(params[:user_id])
-      @posts = @user.authored_posts
-    else
-      @posts = Post.all
-    end
+      @posts = Post.all     
   end
 
   def new
