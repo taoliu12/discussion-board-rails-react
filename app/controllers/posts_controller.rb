@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, :redirect_if_post_not_found, only: [:show, :edit, :update, :destroy]
   before_action :redirect_unauthorized_user, only: [:edit, :update, :destroy]
 
   def index
@@ -50,15 +50,20 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def redirect_if_post_not_found
+    if @post.nil?
+      redirect_to posts_path, notice: 'Post not found.'
+    end     
   end
 
   def redirect_unauthorized_user
     if @post.user != current_user
       redirect_to posts_path
     end
-  end
-  
+  end  
 
   def post_params
     params.require(:post).permit(:title, :body)

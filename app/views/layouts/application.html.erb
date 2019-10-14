@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsReddit</title>
+    <title>Talkytalk Discussion Board</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,7 +25,7 @@
     <% end %>
 
     <% flash.keys.each do |type| %>
-      <div data-alert class="flash <%= type %> alert-box radius border shadow-sm rounded mt-2 p-2">
+      <div data-alert class="flash <%= type %> alert-box radius">
         <%= flash[type] %>
       </div>
     <% end %>
