@@ -7,7 +7,11 @@ class VotesController < ApplicationController
         end
         
         @vote = current_user.votes.find_or_initialize_by(post: @post)
-        if @vote.update(vote_params)      
+        
+        if @vote.value == vote_params[:value].to_i
+            flash[:message] = 'Vote Retracted'
+            @vote.destroy
+        elsif @vote.update(vote_params)      
             flash[:message] = 'Vote Successful'
         else
             flash[:message] = `Something went wrong`
