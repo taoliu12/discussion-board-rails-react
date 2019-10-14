@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
         if @user
-            @posts = @user.authored_posts     
+            redirect_to user_posts_path(@user)    
         else
             redirect_to root_path
         end     
