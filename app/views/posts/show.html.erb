@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.user.username %></p>
+<p>by <%= @post.user.username %></p>
 <p><%= @post.body %></p>
 
 <%= form_for( [@post, @vote] ) do |f| %>
@@ -24,7 +24,7 @@
     <% end %>
 <% end %>
 
-<p><%= @post.votes_total %></p>
+<p>Vote total: <%= @post.votes_total %></p>
 
 <% if @post.user == current_user %>
 <%= link_to  "Edit Post", edit_post_path(@post) %> | <%= link_to  "Delete Post", post_path(@post), method: :delete %>
