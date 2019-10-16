@@ -6,6 +6,9 @@ ruby '2.6.1'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
