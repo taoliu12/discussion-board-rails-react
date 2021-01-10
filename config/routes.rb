@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
-  get '/auth/google_oauth2/callback', to: 'sessions#create_from_omniauth'
+  get '/auth/:provider/callback', to: 'sessions#create_from_omniauth'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
