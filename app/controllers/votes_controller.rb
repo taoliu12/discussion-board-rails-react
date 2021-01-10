@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
     def create 
-        @post = Post.find_by(params[:post_id])
+        @post = Post.find_by_id(params[:post_id])
         if !@post
             flash[:message] = 'Post Does Not Exist'
             redirect_to posts_path
