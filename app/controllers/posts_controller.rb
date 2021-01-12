@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:user_id]
-      @user = User.find_by(params[:user_id])
+      @user = User.find_by_id(params[:user_id])
       @posts = @user.authored_posts
     else
       @posts = Post.all
