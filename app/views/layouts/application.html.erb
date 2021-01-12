@@ -23,9 +23,10 @@
       </p>
     <% else %>
       <p>
-        <%= link_to  "Login", login_path %> | 
-        <%= link_to  "Login via Google", '/auth/google_oauth2' %> | 
+        <%= link_to  "Login", login_path %> |            
         <%= link_to  "Signup", signup_path %>
+        <%= button_to "Log in with Google", '/auth/google_oauth2' %>
+
       </p>
     <% end %>
 
