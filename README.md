@@ -1,6 +1,6 @@
 # Rails Discussion Board
 
-This is a rails application that is a discussion forum with upvote/downvote feature.
+This is a discussion forum with upvote/downvote feature, built with Ruby on Rails.
 
 ## Installation
 
