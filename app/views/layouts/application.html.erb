@@ -17,7 +17,7 @@
       <p>
         <%= link_to "New Post", new_post_path %> | 
         <%= link_to "All Posts", posts_path %> | 
-        <%= link_to "Profile", user_posts_path(current_user) %> | 
+        <%= link_to "My Posts", user_posts_path(current_user) %> | 
         <%= link_to  "Logout", logout_path, method: :delete %>
       
       </p>
