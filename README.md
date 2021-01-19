@@ -1,4 +1,4 @@
-# Rails Discussion Board with Voting Feature
+# Rails Discussion Board
 
 This is a rails application that is a discussion forum with upvote/downvote feature.
 
