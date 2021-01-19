@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-if ENV["RAILS_ENV"] == "development"
-  ruby '2.6.1'
-elsif ENV["RAILS_ENV"] == "production"
-  ruby '2.6.6'
-end
+ruby '2.6.6'
+ 
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails' 
