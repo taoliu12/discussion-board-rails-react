@@ -12,7 +12,8 @@
 
   <body>
   <div class='container'>
-  <h2><%= link_to "Talkytalk", posts_path %></h2>
+  <h2><%= link_to "Talkytalk Discussion Board", posts_path %></h2>
+  <h5>Make a new post or vote on other posts!</h5>
     <% if logged_in? %>
       <p>
         <%= link_to "New Post", new_post_path %> | 
