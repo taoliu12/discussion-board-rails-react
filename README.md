@@ -2,6 +2,8 @@
 
 This is a discussion forum with upvote/downvote feature, built with Ruby on Rails.
 
+Live Demo: https://agile-woodland-60687.herokuapp.com/
+
 ## Installation
 
 Simply clone the repo or download and unzip the files to any folder on your computer. To start the program, navigate to the program folder and run
