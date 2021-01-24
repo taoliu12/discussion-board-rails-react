@@ -2,26 +2,30 @@
 <p>by <%= @post.user.username %></p>
 <p><%= @post.body %></p>
 
-<%= form_for( [@post, @vote] ) do |f| %>
-    <%= f.hidden_field :value, value: 1 %>
-    <%= button_tag( :class => "btn") do %>
-        <% if @user_vote && @user_vote.value == 1 %>
-            <i class="fas fa-arrow-circle-up"></i>
-        <% else %>
-            <i class="far fa-arrow-alt-circle-up"></i>
+<% if logged_in? %>
+    <%= form_for( [@post, @vote] ) do |f| %>
+        <%= f.hidden_field :value, value: 1 %>
+        <%= button_tag( :class => "btn") do %>
+            <% if @user_vote && @user_vote.value == 1 %>
+                <i class="fas fa-arrow-circle-up"></i>
+            <% else %>
+                <i class="far fa-arrow-alt-circle-up"></i>
+            <% end %>
         <% end %>
     <% end %>
-<% end %>
 
-<%= form_for( [@post, @vote] ) do |f| %>
-    <%= f.hidden_field :value, value: -1 %>
-    <%= button_tag( :class => "btn") do %>
-        <% if @user_vote && @user_vote.value == -1 %>
-            <i class="fas fa-arrow-circle-down"></i>
-        <% else %>
-            <i class="far fa-arrow-alt-circle-down"></i>
+    <%= form_for( [@post, @vote] ) do |f| %>
+        <%= f.hidden_field :value, value: -1 %>
+        <%= button_tag( :class => "btn") do %>
+            <% if @user_vote && @user_vote.value == -1 %>
+                <i class="fas fa-arrow-circle-down"></i>
+            <% else %>
+                <i class="far fa-arrow-alt-circle-down"></i>
+            <% end %>
         <% end %>
     <% end %>
+<% else %>
+    <h6>Sign up or login to vote! </h6>
 <% end %>
 
 <p>Vote total: <%= @post.votes_total %></p>

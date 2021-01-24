@@ -26,7 +26,9 @@ class PostsController < ApplicationController
 
   def show     
      @vote = Vote.new 
-     @user_vote = current_user.votes.find_or_initialize_by(post: @post)
+     if logged_in?
+       @user_vote = current_user.votes.find_or_initialize_by(post: @post)
+     end
   end
 
   def edit     
