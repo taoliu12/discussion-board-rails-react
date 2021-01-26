@@ -1,6 +1,6 @@
 # Rails Discussion Board
 
-[Live Demo] (https://agile-woodland-60687.herokuapp.com/)
+[Live Demo](https://agile-woodland-60687.herokuapp.com/)
 
 This is a discussion forum with upvote/downvote feature, built with Ruby on Rails.
 
