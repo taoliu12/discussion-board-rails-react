@@ -13,8 +13,7 @@
   <body>
   <div class='container'>
   <h1><%= link_to "Talkytalk Discussion Board", posts_path %></h1>
-  <h5>Make a new post or vote on other posts!</h5>
-
+  <h5>Make a new post or vote on other posts!</h5>   
   <div id="navbar">
       <% if logged_in? %>
         <p>
@@ -25,9 +24,10 @@
         </p>
       <% else %>
         <p>
+          <%= link_to "Home", posts_path %> |
           <%= link_to  "Login", login_path %> |            
           <%= link_to  "Signup", signup_path %>
-          <%= button_to "Log in with Google", '/auth/google_oauth2' %>
+          <%= button_to "Log in with Google", '/auth/google_oauth2', class: "btn btn-primary"%>
         </p>
       <% end %>
     </div>
