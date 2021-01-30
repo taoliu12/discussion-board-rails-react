@@ -11,6 +11,7 @@
             <% else %>
                 <i class="far fa-arrow-alt-circle-up"></i>
             <% end %>
+            Upvote
         <% end %>
     <% end %>
 
@@ -22,13 +23,14 @@
             <% else %>
                 <i class="far fa-arrow-alt-circle-down"></i>
             <% end %>
+            Downvote
         <% end %>
     <% end %>
 <% else %>
     <h6>Sign up or login to vote! </h6>
 <% end %>
-
-<p>Vote total: <%= @post.votes_total %></p>
+<br>
+<h6>Vote total: <%= @post.votes_total %></h6>
 
 <% if @post.user == current_user %>
 <%= link_to  "Edit Post", edit_post_path(@post) %> | <%= link_to  "Delete Post", post_path(@post), method: :delete %>
