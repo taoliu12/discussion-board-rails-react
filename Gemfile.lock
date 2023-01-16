@@ -167,6 +167,8 @@ GEM
     puma (3.12.6)
     racc (1.6.2)
     rack (2.2.5)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-protection (3.0.5)
       rack
     rack-test (2.0.2)
@@ -274,6 +276,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.3)
   selenium-webdriver
   spring

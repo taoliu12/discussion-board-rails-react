@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end   
+    render json:@posts
   end
 
   def new
