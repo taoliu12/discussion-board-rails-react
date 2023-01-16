@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end   
-    render json:@posts
+    render json: PostSerializer.new(@posts)
   end
 
   def new
