@@ -4,14 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:username])     
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
-    else 
-      flash[:message] = 'Please try again'
-      redirect_to login_path
-    end     
+    @user = User.find_by(username: user_params[:username])     
+    if @user && @user.authenticate(user_params[:password])
+      session[:user_id] = @user.id       
+      render json: @user
+    else         
+        render json: { error: "Invalid username or password" }, status: :unauthorized
+    end   
   end
 
   def create_from_omniauth
@@ -37,6 +36,10 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
 
   def omniauth
     request.env['omniauth.auth']

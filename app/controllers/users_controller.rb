@@ -15,6 +15,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def edit
+        @user = User.find(params[:id])
+    end
+
     def show
         @user = User.find_by(id: params[:id])
         if @user
@@ -22,6 +26,16 @@ class UsersController < ApplicationController
         else
             redirect_to root_path
         end     
+    end
+
+    def me
+        user = User.find_by(id: session[:user_id]) 
+        # byebug        
+        if user   
+            render json: user,status: :ok
+        else
+            render json: { error: "Not logged in" }, status: :unauthorized
+        end
     end
     
 
