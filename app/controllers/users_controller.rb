@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
     def me
         user = User.find_by(id: session[:user_id]) 
-        # byebug        
+        byebug        
         if user   
             render json: user,status: :ok
         else

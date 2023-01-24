@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
   
-  get '/me', to: 'users#me'
-
+  get    "/userInSession", to:"sessions#get_logged_in_user"
 
   root to: 'posts#index'
 
