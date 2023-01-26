@@ -48,7 +48,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear     
-    redirect_to root_path
+    render json: { message: "logged out"}
   end
 
   private
