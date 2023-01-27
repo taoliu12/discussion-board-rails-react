@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, :redirect_if_post_not_found, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_unauthorized_user, only: [:edit, :update, :destroy]
+  # before_action :redirect_unauthorized_user, only: [:edit, :update, :destroy]
 
   def index
     if params[:user_id]
@@ -16,12 +16,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create     
+  def create          
     @post = current_user.authored_posts.build(post_params)        
     if @post.save
-      redirect_to post_path(@post)
+      render json: @post
     else
-      render :new
+      render json: {error: "Something went wrong"}
     end  
   end
 
