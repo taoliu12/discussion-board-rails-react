@@ -9,4 +9,17 @@ class Post < ApplicationRecord
     def votes_total
         votes.sum(&:value)
     end
+
+    # def current_user_vote
+    # #     does post have a vote that belongs to current user?
+    #         # what is value of the vote?
+    #         # 	if 1, render filled up arrow
+    #         # 	if -1, render filled down arrow
+    #         # 	else, render render default arrows
+    #     if current_user
+    #         votes.find_by(user_id: current_user.id)
+            
+    #     end
+    
+    # end
 end

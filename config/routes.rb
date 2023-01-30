@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'posts', to:'posts#index'
   get 'posts/new'
   get 'posts/create'
   get 'posts/destroy'
@@ -8,11 +9,10 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
   
-  get    "/userInSession", to:"sessions#get_logged_in_user"
+  get "/userInSession", to:"sessions#get_logged_in_user"
 
   root to: 'posts#index'
 
-  get '/posts', to: redirect('/')
   resources :posts, except: [:index] do
     resources :votes, only: [:create]
   end

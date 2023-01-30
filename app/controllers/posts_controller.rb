@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     if params[:user_id]
       @user = User.find_by_id(params[:user_id])
       @posts = @user.authored_posts
-    else
+    else       
       @posts = Post.all
     end   
     render json: PostSerializer.new(@posts)

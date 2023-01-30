@@ -2,21 +2,21 @@ class VotesController < ApplicationController
     def create 
         @post = Post.find_by_id(params[:post_id])
         if !@post
-            flash[:message] = 'Post Does Not Exist'
-            redirect_to posts_path
+            message = 'Post Does Not Exist'
+            render json: { error: message }, status: :unprocessable_entity
         end
         
         @vote = current_user.votes.find_or_initialize_by(post: @post)
-        
+                 
         if @vote.value == vote_params[:value].to_i
-            flash[:message] = 'Vote Retracted'
+            message = 'Already Voted'
             @vote.destroy
         elsif @vote.update(vote_params)      
-            flash[:message] = 'Vote Successful'
+            message = 'Vote Successful'
         else
-            flash[:message] = `Something went wrong`
+            message = `Something went wrong`
         end
-        redirect_to post_path(@post)
+        render json: PostSerializer.new(@post)
     end
 
     private
