@@ -10,6 +10,11 @@ class Post < ApplicationRecord
         votes.sum(&:value)
     end
 
+    def formatted_created_at
+        # created_at.strftime('%B %e, %Y at %l:%M %p')
+        created_at.strftime('%B %e, %Y')
+    end
+
     # def current_user_vote
     # #     does post have a vote that belongs to current user?
     #         # what is value of the vote?
