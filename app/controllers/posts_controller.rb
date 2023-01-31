@@ -9,6 +9,12 @@ class PostsController < ApplicationController
     else       
       @posts = Post.all
     end   
+    if logged_in?
+      @posts.each do |post|
+        post.get_current_user_vote(current_user)
+      end
+    end
+
     render json: PostSerializer.new(@posts)
   end
 

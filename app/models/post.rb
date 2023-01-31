@@ -15,7 +15,16 @@ class Post < ApplicationRecord
         created_at.strftime('%B %e, %Y')
     end
 
-    # def current_user_vote
+    def get_current_user_vote(user)         
+        votes.each do |vote|             
+            if vote.user_id == user.id
+                # byebug
+                return vote
+            end
+        end
+    end
+
+    # def current_user_vote(user)
     # #     does post have a vote that belongs to current user?
     #         # what is value of the vote?
     #         # 	if 1, render filled up arrow
