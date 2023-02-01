@@ -6,6 +6,10 @@ class Post < ApplicationRecord
     validates :title, presence: true
     validates :body, presence: true
 
+    def author_name
+        user.username
+    end
+
     def votes_total
         votes.sum(&:value)
     end

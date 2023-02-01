@@ -19,17 +19,18 @@ class PostsController < ApplicationController
   def create          
     @post = current_user.authored_posts.build(post_params)        
     if @post.save
-      render json: @post
+      render json: PostSerializer.new(@post)
     else
       render json: {error: "Something went wrong"}
     end  
   end
 
   def show     
-     @vote = Vote.new 
-     if logged_in?
-       @user_vote = current_user.votes.find_or_initialize_by(post: @post)
-     end
+    #  @vote = Vote.new 
+    #  if logged_in?
+    #    @user_vote = current_user.votes.find_or_initialize_by(post: @post)
+    #  end
+    render json: PostSerializer.new(@post)
   end
 
   def edit     
