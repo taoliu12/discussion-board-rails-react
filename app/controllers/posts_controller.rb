@@ -4,10 +4,10 @@ class PostsController < ApplicationController
 
   def index
     if params[:user_id]
-      @user = User.find_by_id(params[:user_id])
-      @posts = @user.authored_posts
+      @user = User.find_by_id(params[:user_id])       
+      @posts = @user.authored_posts.reverse
     else       
-      @posts = Post.all
+      @posts = Post.all.reverse
     end   
     render json: PostSerializer.new(@posts)
   end
