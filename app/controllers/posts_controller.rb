@@ -45,9 +45,13 @@ class PostsController < ApplicationController
     end  
   end
 
-  def destroy     
+  def destroy  
     @post.destroy       
-    redirect_to posts_path, notice:  'Post deleted.'
+    if @post.errors.messages.empty?
+      render json: @post  
+    else
+      render json: {error: "Something went wrong"}
+    end
   end
 
   private
