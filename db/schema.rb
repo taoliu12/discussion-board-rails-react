@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_01_12_025633) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "body"
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 2021_01_12_025633) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
     t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,4 +44,6 @@ ActiveRecord::Schema.define(version: 2021_01_12_025633) do
     t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end

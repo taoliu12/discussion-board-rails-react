@@ -1,0 +1,42 @@
+.App-header {   
+  display: flex;
+}
+
+.top-nav-bar-link {
+  font-size: 12pt;
+  font-weight: bold;
+  ;
+}
+
+main {
+   margin-top: 110px;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   
+  } 
+
+  footer {
+    padding-top:50px;
+    padding-bottom:20px;
+  }
+
+.posts-container {
+  text-align: center;
+  margin: 11px;
+} 
+
+.post-card {
+    display: flex; 
+    margin: 11px;
+}
+
+.post-card-votes-box {
+    flex: 1;
+    max-width: 120px; 
+}  
+
+.post-card-content {
+  flex: 4;
+  text-align: left;
+}  
