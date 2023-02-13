@@ -4,7 +4,9 @@
 
 This is a discussion forum with a upvote/downvote feature. Built using:
 
--React client -Rails API - PostgresDB
+-React client (including material ui, react-hook-form)
+
+-Rails API -PostgresSQL
 
 
 ## Installation and Running
