@@ -1,6 +1,6 @@
 # Talky - Discussion Board
 
-[Live Demo](https://talky.onrender.com/)
+[Live Demo](https://talky.onrender.com/) Initial loading takes up to 30 seconds due to render.io hosting free tier.
 
 This is a discussion forum with a upvote/downvote feature. Built using:
 
