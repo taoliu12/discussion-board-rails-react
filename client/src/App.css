@@ -8,6 +8,10 @@
   ;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
    margin-top: 110px;
    text-align: center;
