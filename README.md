@@ -1,8 +1,8 @@
 # Talky - Discussion Board
 
-[Live Demo](https://talky.onrender.com/) Initial loading takes up to 30 seconds due to render.io hosting free tier.
+[Live Demo](https://talky.onrender.com/) - Initial loading can take up to 30 seconds due to render.io's hosting free tier.
 
-This is a discussion forum with a upvote/downvote feature. Built using:
+This is a discussion forum with a upvote/downvote feature. It is a personal portfolio project. Built using:
 
 -React client (including material ui, react-hook-form)
 
