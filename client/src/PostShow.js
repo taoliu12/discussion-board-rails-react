@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
+import VotesBox from "./VotesBox";
+
 import Link from '@mui/material/Link'; 
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
@@ -118,42 +120,7 @@ console.log("postshow post", post )
     post && 
     <Card sx={{ textAlign: 'center', borderColor: 'gray', marginY: '15px'}} variant="outlined">
     <div className="post-card">
-        <div className="post-card-votes-box" > 
-          <Typography sx={{ mt: '5px', fontSize: '1.3rem'}}>{votes_total}</Typography>
-          <div aria-owns={open ? 'mouse-over-popover' : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}> 
-            <div><Button onClick={handleUpVote}>
-              {(currentUserVote.value == 1) ? <ThumbUpIcon sx={{  }}/> :  <ThumbUpOutlined sx={{  }}/>}
-              </Button></div>
-            <div><Button onClick={handleDownVote}>
-              {(currentUserVote.value == -1) ? <ThumbDownIcon sx={{  }}/> : <ThumbDownOutlined sx={{  }}/>}
-            </Button></div>
-          </div>
- 
-          {!loggedInUser && <Popover
-            id="mouse-over-popover"
-            sx={{pointerEvents: 'none'}}
-            open={open}
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            onClose={handlePopoverClose}
-            disableRestoreFocus
-          >
-            <Typography sx={{ p: 1 }}>Login to vote.</Typography>
-          </Popover>
-          } 
-      
-
-        </div>
+        <VotesBox post={post} loggedInUser={loggedInUser}/>
         <div className="post-card-content">
         <NavLink to={`/posts/${post.id}`}
         style={{                      
