@@ -10,12 +10,25 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown'; 
 import ThumbUpOutlined from '@mui/icons-material/ThumbUpOutlined';
 import ThumbDownOutlined from '@mui/icons-material/ThumbDownOutlined'; 
+import Popover from '@mui/material/Popover'; 
+import Typography from '@mui/material/Typography';
 
 export default function PostShow({loggedInUser}) {   
   const [votes_total, setVotesTotal] = useState(0);
   const [post, setPost] = useState(null);
   const [currentUserVote, setCurrentUserVote] = useState({ value: null })
+  const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
+
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   let { postId } = useParams();
 
@@ -106,13 +119,40 @@ console.log("postshow post", post )
     <Card sx={{ textAlign: 'center', borderColor: 'gray', marginY: '15px'}} variant="outlined">
     <div className="post-card">
         <div className="post-card-votes-box" > 
-          <h3>{votes_total}</h3>
-          <div><Button onClick={handleUpVote}>
-            {(currentUserVote.value == 1) ? <ThumbUpIcon sx={{  }}/> :  <ThumbUpOutlined sx={{  }}/>}
+          <Typography sx={{ mt: '5px', fontSize: '1.3rem'}}>{votes_total}</Typography>
+          <div aria-owns={open ? 'mouse-over-popover' : undefined}
+          aria-haspopup="true"
+          onMouseEnter={handlePopoverOpen}
+          onMouseLeave={handlePopoverClose}> 
+            <div><Button onClick={handleUpVote}>
+              {(currentUserVote.value == 1) ? <ThumbUpIcon sx={{  }}/> :  <ThumbUpOutlined sx={{  }}/>}
+              </Button></div>
+            <div><Button onClick={handleDownVote}>
+              {(currentUserVote.value == -1) ? <ThumbDownIcon sx={{  }}/> : <ThumbDownOutlined sx={{  }}/>}
             </Button></div>
-          <div><Button onClick={handleDownVote}>
-            {(currentUserVote.value == -1) ? <ThumbDownIcon sx={{  }}/> : <ThumbDownOutlined sx={{  }}/>}
-          </Button></div>
+          </div>
+ 
+          {!loggedInUser && <Popover
+            id="mouse-over-popover"
+            sx={{pointerEvents: 'none'}}
+            open={open}
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            onClose={handlePopoverClose}
+            disableRestoreFocus
+          >
+            <Typography sx={{ p: 1 }}>Login to vote.</Typography>
+          </Popover>
+          } 
+      
+
         </div>
         <div className="post-card-content">
         <NavLink to={`/posts/${post.id}`}
