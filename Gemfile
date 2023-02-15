@@ -17,7 +17,7 @@ gem 'fast_jsonapi'
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'pg'
