@@ -41,8 +41,8 @@ ENV RAILS_MASTER_KEY=${MASTER_KEY}
 # pre-compile Rails assets with master key
 # RUN bundle exec rake assets:precompile
 
-EXPOSE 3000
+EXPOSE 8080
 
-CMD ["bin/rails", "server", "-b", "0.0.0.0"]
-#CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
+#CMD ["bin/rails", "server", "-b", "0.0.0.0"]
+CMD ["bin/rails", "server", "-b", "0.0.0.0", "-p", "8080"]
 
