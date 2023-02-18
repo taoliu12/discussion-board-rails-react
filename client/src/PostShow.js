@@ -136,13 +136,15 @@ console.log("postshow post", post )
             (loggedInUser?.id == post?.attributes.author_id) &&
             <>
             <NavLink to={`/posts/${post.id}/edit`}>
-              <Button sx={{ my: 2 }}>
+              <Button className="edit-del-button" sx={{ my: 2 }}>
                 Edit
               </Button>
             </NavLink>
-            <Button onClick={handleDeletePost} sx={{ my: 2 }}>
-              Delete
-            </Button>
+            <a> 
+              <Button onClick={handleDeletePost} sx={{ my: 2 }}>
+                Delete
+              </Button>
+            </a>
             </>
         }
         </div>

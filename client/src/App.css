@@ -12,6 +12,17 @@ a {
   text-decoration: none;
 }
 
+.post-title-link:hover {
+  text-decoration: underline;
+}
+.top-nav-bar-link:hover {
+  background-color: #245bc2;
+}
+.post-card Button:hover {
+  background-color: #ebf6ff !important;
+}
+
+
 main {
    margin-top: 110px;
    text-align: center;

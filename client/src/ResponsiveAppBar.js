@@ -57,7 +57,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <ForumIcon sx={{ display: { 
-              fontSize: '33px',xs: 'none', md: 'flex' }, mr: 1 }} />
+              fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
           <Typography 
             noWrap
             component="a"
@@ -75,8 +75,8 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
           >
             Talky
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/*hamburger*/}
+          <Box id="test" sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -87,7 +87,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
             >
               <MenuIcon />
             </IconButton> 
-            <Menu
+            <Menu 
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -149,6 +149,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
                 <NavbarButton item='Login' route='/login'/>               
                 <NavbarButton item='Sign Up' route='/signup'/>               
               </> }
+              <NavbarButton item='About' route='/about'/>      
           </Box>
 
         { loggedInUser &&
