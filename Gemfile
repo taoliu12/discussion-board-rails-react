@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
-gem 'jquery-rails' 
+git_source(:github) { |repo| "https://github.com/#{repo}.git" } 
 
 gem 'rack-cors'
 gem 'fast_jsonapi'

@@ -108,7 +108,7 @@ export default function PostCard({post, loggedInUser}) {
     <div className="post-card">
       <VotesBox post={post} loggedInUser={loggedInUser}/>
       <div className="post-card-content">
-      <NavLink to={`/posts/${post.id}`}
+      <NavLink className='post-title-link' to={`/posts/${post.id}`}
       style={{                      
         fontSize: '24px',
         fontWeight: 'bold'

@@ -73,7 +73,7 @@ function App() {
       </main>
       <br></br>
       <footer style={{alignItems: 'center'}}>
-        
+               
         <Typography sx={{ display: { fontSize: '11px', color: 'gray'}, m: 1 }} >         
           Made by Tao Liu 
         </Typography >
