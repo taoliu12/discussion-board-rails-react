@@ -149,7 +149,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
                 <NavbarButton item='Login' route='/login'/>               
                 <NavbarButton item='Sign Up' route='/signup'/>               
               </> }
-              <NavbarButton item='About' route='/about'/>      
+              {/* <NavbarButton item='About' route='/about'/>       */}
           </Box>
 
         { loggedInUser &&

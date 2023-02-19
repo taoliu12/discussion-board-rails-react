@@ -22,22 +22,23 @@ function App() {
   const [ loggedInUser , setLoggedInUser ] = useState( null )
   const [posts, setPosts] = useState(null);
 
-  useEffect(() => { 
-    console.log('initial fetch')
-    fetch("/", {
-      headers:{
-          "accepts":"application/json"
-      }
-    })
-    .then((res) => res.json())     
-    .then((posts) => setPosts(posts.data))
-    .catch((err) => console.log(err));     
-  }, []);
+  // useEffect(() => { 
+  //   console.log('initial fetch')
+  //   fetch("https://talky-3uhnq6aaua-uc.a.run.app/", {
+  //     headers:{
+  //         "accepts":"application/json"
+  //     }
+  //   })
+  //   .then((res) => res.json())     
+  //   .then((posts) => setPosts(posts.data))
+  //   .catch((err) => console.log(err));     
+  // }, []);
 
   useEffect(() => {
     fetch( "/userInSession" )
     .then( r => r.json() )
     .then( userAlreadyLoggedIn => { 
+      userAlreadyLoggedIn.data &&
       setLoggedInUser(userAlreadyLoggedIn.data.attributes) 
     })
   }, [])
