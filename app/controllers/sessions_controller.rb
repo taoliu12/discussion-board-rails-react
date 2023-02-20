@@ -15,8 +15,7 @@ class SessionsController < ApplicationController
   
   def get_logged_in_user
     user_already_loggedin = User.find_by( id: session[:user_id] ) 
-    # render json: user_already_loggedin        
-    render json: UserSerializer.new(user_already_loggedin)        
+    render json: UserSerializer.new(user_already_loggedin, {exclude: :password_digest}).serialized_json
   end
 
   def create_from_omniauth

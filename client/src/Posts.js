@@ -9,7 +9,6 @@ import Select from '@mui/material/Select';
 
 export default function Posts({loggedInUser}) {
   const [posts, setPosts] = useState([]);
-  const [sortBy, setSortBy] = useState('latest');
 
   useEffect(() => { 
     fetch("/posts")
@@ -21,8 +20,7 @@ export default function Posts({loggedInUser}) {
   const handleChange = (event) => {     
     const sortedPosts = sortPosts(posts, event.target.value); 
     setPosts([...sortedPosts])
-    console.log(posts[0]);  
-  };
+  }; 
   
   const sortPosts = (posts, sortBy) => {     
     switch (sortBy) {

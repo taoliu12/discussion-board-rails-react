@@ -56,8 +56,10 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
     }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <ForumIcon sx={{ display: { 
-              fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
+          <Link to='/posts'> 
+            <ForumIcon sx={{ display: { color: 'white',
+            fontSize: '33px',xs: 'none', sm: 'flex' }, mr: 1 }} />
+          </Link>
           <Typography 
             noWrap
             component="a"
