@@ -5,10 +5,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import LoadingButton from '@mui/lab/LoadingButton';
 
 export default function Posts({loggedInUser}) {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(null);
 
   useEffect(() => { 
     fetch("/posts")
@@ -38,7 +38,7 @@ export default function Posts({loggedInUser}) {
   };
      
   return (
-      <Box m="auto" sx={{ minWidth: 275, maxWidth: 1000 }}> 
+      <Box m="auto" sx={{ minWidth: 275, maxWidth: 1000 }}>  
       <h2>All Posts</h2>
       <select onChange={handleChange}>
         <option value="latest">Latest</option>
@@ -46,9 +46,10 @@ export default function Posts({loggedInUser}) {
         <option value="most popular">Most Popular</option>
         <option value="least popular">Least Popular</option>
       </select>
+      
       {posts ? posts.map((post) => (  //wait until both posts && loggedInUser are loaded, otherwise get error in devtools sometimes
         <PostCard loggedInUser={loggedInUser} post={post} key={post.id}/>)
-        ) : <p style={{color:'black'}}>'Loading...'</p>}
+        ) : <p><LoadingButton loading sx={{my: '30px', fontSize: '20px'}}/></p>}
         </Box>     
   );
 }
