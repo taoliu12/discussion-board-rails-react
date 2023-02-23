@@ -42,7 +42,7 @@ main {
 
 .post-card {
     display: flex; 
-    margin: 11px;
+    padding: 11px;
 }
 
 .post-card-votes-box {
@@ -63,18 +63,25 @@ main {
 
 .dark-mode {
   color: rgb(255, 255, 255);
-    
+  background-color: #1a202c;
+
   main {
     background-color: #1a202c;
   }
-  
-  #toggle {
-    background-color: rgb(255, 255, 255);
 
-    .toggle-inner {
-      background-color: #1a202c;
-    }
+  .post-card {
+    color: rgb(255, 255, 255);
+    background-color: #1a202c;
   }
+
+  a, svg {
+    color: rgb(255, 255, 255);
+  }
+
+  input {
+    background-color: white;
+  }
+
 }
 
 #toggle:hover {
