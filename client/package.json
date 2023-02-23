@@ -11,14 +11,15 @@
     "@mui/lab": "^5.0.0-alpha.120",
     "@mui/material": "^5.11.7",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "node-sass": "^8.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.42.1",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "sass": "^1.57.1"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0"
   }
 }

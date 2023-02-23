@@ -1,5 +1,7 @@
 
-import './App.css';
+import './App.scss';
+import IconButton from '@mui/material/IconButton';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 import React, { Component, useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Posts from './Posts';
@@ -17,6 +19,36 @@ import ResponsiveAppBar from './ResponsiveAppBar';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link, Typography} from '@mui/material';
+
+function DarkModeButton() {
+  const [ darkMode, setDarkMode ] = React.useState(false)
+  const [ darkModeText, setDarkModeText ] = React.useState("Toggle Dark")
+  
+  React.useEffect(() => {
+    const body = document.body
+    // const toggle = document.querySelector('.toggle-inner')
+    
+    // If dark mode is enabled - adds classes to update dark-mode styling.
+    // Else, removes and styling is as normal.
+    if( darkMode === true ) {
+      body.classList.add('dark-mode')
+      setDarkModeText("Go Light")
+  
+    } else {
+      body.classList.remove('dark-mode')
+      setDarkModeText("Go Dark")
+    }
+  }, [darkMode])
+  
+  return (
+    <div className='dark-mode-div'> 
+      <IconButton sx={{ ml: 1 }} onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)} color="inherit">
+       <Brightness4Icon />
+      </IconButton>
+    </div>
+  )
+}
+
 
 function App() {
   const [ loggedInUser , setLoggedInUser ] = useState( null )
@@ -47,6 +79,7 @@ function App() {
       <header className="App-header"></header>
       <div className="posts-container">
       <main>         
+      <DarkModeButton />
       <Routes>
         <Route path='/signup' element={<SignupForm setLoggedInUser={setLoggedInUser}/>}/>                          
         <Route path='/login' element={<LoginForm setLoggedInUser={setLoggedInUser}/>}/>   

@@ -22,7 +22,6 @@ a {
   background-color: #ebf6ff !important;
 }
 
-
 main {
    margin-top: 110px;
    text-align: center;
@@ -43,7 +42,7 @@ main {
 
 .post-card {
     display: flex; 
-    margin: 11px;
+    padding: 11px;
 }
 
 .post-card-votes-box {
@@ -55,3 +54,37 @@ main {
   flex: 4;
   text-align: left;
 }  
+
+// Dark Mode styling
+//-------------------------------------
+.dark-mode-div {
+  float: right;
+}
+
+.dark-mode {
+  color: rgb(255, 255, 255);
+  background-color: #1a202c;
+
+  main {
+    background-color: #1a202c;
+  }
+
+  .post-card {
+    color: rgb(255, 255, 255);
+    background-color: #1a202c;
+  }
+
+  a, svg {
+    color: rgb(255, 255, 255);
+  }
+
+  input {
+    background-color: white;
+  }
+
+}
+
+#toggle:hover {
+  box-shadow: 2px 2px 11px rgba(0,0,0,0.52);
+}
+// Dark Mode Toggle End
