@@ -1,3 +1,7 @@
+.App {    
+  text-align: center;
+}
+
 .App-header {   
   display: flex;
 }
@@ -23,21 +27,40 @@ a {
 }
 
 main {
-   margin-top: 110px;
-   text-align: center;
-   align-items: center;
-   justify-content: center;
-   
-  } 
+  margin-top: 110px;
+  text-align: center;
+  align-items: center;
+  justify-content: center; 
+} 
 
-  footer {
-    padding-top:50px;
-    padding-bottom:20px;
-  }
+footer {
+  padding-top:50px;
+  padding-bottom:20px;
+}
 
 .posts-container {
   text-align: center;
-  margin: 11px;
+  margin: auto;
+  max-width: 1200px; 
+} 
+
+.comment-form-container { 
+  text-align: left;
+  form {
+    textarea {
+      width: 80%;
+      height: 80px;
+      padding: 13px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      font-family: Oxygen, sans-serif;
+      font-size: 19px;
+    }
+
+    
+  }
+  
 } 
 
 .post-card {

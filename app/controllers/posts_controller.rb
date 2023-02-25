@@ -25,12 +25,8 @@ class PostsController < ApplicationController
     end  
   end
 
-  def show     
-    #  @vote = Vote.new 
-    #  if logged_in?
-    #    @user_vote = current_user.votes.find_or_initialize_by(post: @post)
-    #  end
-    render json: PostSerializer.new(@post)
+  def show        
+    render json: PostSerializer.new(@post, {include: [:comments]}).serialized_json
   end
 
   def edit     

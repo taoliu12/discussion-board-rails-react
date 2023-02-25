@@ -3,19 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 import VotesBox from "./VotesBox";
-
-import Link from '@mui/material/Link'; 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp'; 
-import ThumbDownIcon from '@mui/icons-material/ThumbDown'; 
-import ThumbUpOutlined from '@mui/icons-material/ThumbUpOutlined';
-import ThumbDownOutlined from '@mui/icons-material/ThumbDownOutlined'; 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Popover from '@mui/material/Popover'; 
+
 
 
 export default function PostCard({post, loggedInUser}) {
