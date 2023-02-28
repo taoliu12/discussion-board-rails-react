@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
+import NewCommentForm from "./NewCommentForm";
 import VotesBox from "./VotesBox";
+import Comments from "./Comments";
+import Box from '@mui/material/Box';
 
 import Link from '@mui/material/Link'; 
 import Card from '@mui/material/Card';
@@ -18,6 +20,7 @@ import Typography from '@mui/material/Typography';
 export default function PostShow({loggedInUser}) {   
   const [votes_total, setVotesTotal] = useState(0);
   const [post, setPost] = useState(null);
+  const [comments, setComments] = useState(null);
   const [currentUserVote, setCurrentUserVote] = useState({ value: null })
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
@@ -46,8 +49,10 @@ export default function PostShow({loggedInUser}) {
     fetch(`/posts/${postId}`)
     .then((res) => res.json())     
     .then((json) => {
-      setVotesTotal(json.data.attributes.votes_total);
+      console.log("postshow json", json )
       setPost(json.data)
+      setComments(json.included)
+      setVotesTotal(json.data.attributes.votes_total);
       getAndSetCurrentUserVote(json.data.attributes)
     })
     .catch((err) => console.log(err)); 
@@ -116,8 +121,10 @@ export default function PostShow({loggedInUser}) {
 
 console.log("postshow loggedInUser", loggedInUser)
 console.log("postshow post", post )
+
   return (
-    post && 
+  <>
+    {post && 
     <Card sx={{ textAlign: 'center', borderColor: 'gray', marginY: '15px'}} variant="outlined">
     <div className="post-card">
         <VotesBox post={post} loggedInUser={loggedInUser}/>
@@ -148,7 +155,13 @@ console.log("postshow post", post )
             </>
         }
         </div>
+        
     </div>
-    </Card>
+    </Card>}
+    <Box m='left' sx={{ textAlign: 'left', minWidth: 275, maxWidth: 1000 }}>  
+      {loggedInUser ? <NewCommentForm setComments={setComments}/> : <p>Login to post a comment</p>}
+      <Comments comments={comments}/>
+    </Box>
+  </>
   );
 }

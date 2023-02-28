@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 
-export default function LoginForm({posts, setPosts}) {
+export default function NewPostForm() {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();     
     const [customError, setCustomError] = useState('')
     const navigate = useNavigate();
@@ -20,7 +20,6 @@ export default function LoginForm({posts, setPosts}) {
             if (!json.error) {
               console.log('sucessfully submitted post')
               navigate('/posts/' + json.data.id)
-                // setPosts( [...posts, data] ) 
             } else {
                 setCustomError("Something went wrong. Please try again.")
                 reset({title: '', body: ''})     

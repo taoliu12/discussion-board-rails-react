@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import './Login.css';
+import './Login.scss';
 
 export default function LoginForm({setLoggedInUser}) {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();

@@ -40,8 +40,6 @@ export default function DarkModeButton() {
         <IconButton  sx={{ mx: 1 }} onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)} color="inherit">
          <Brightness4Icon alt='dark '/>
         </IconButton>
-
-   
       </div>
     )
   }

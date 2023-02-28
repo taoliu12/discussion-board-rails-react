@@ -9,12 +9,16 @@ Vote.destroy_all
 Post.destroy_all
 User.destroy_all
 
-users = User.create([{username: 'user1', password: 'password'}, {username: 'user2', password: 'password'}, {username: 'user3', password: 'password'}, {username: 'user4', password: 'password'}])
+users = User.create(
+  [{username: 'user1', password: 'password'}, {username: 'user2', password: 'password'}, {username: 'user3', password: 'password'}, {username: 'user4', password: 'password'}, {username: 'aaaa', password: 'aaaa'}
+  ]
+)
 
 users.each do |user|
     user_posts = [] 
      10.times {user_posts << user.authored_posts.create(
-        { title: Faker::Lorem.sentence, 
+        { 
+          title: Faker::Lorem.sentence, 
           body: Faker::Lorem.paragraph(sentence_count: rand(1..21))
         }
       )
@@ -22,5 +26,16 @@ users.each do |user|
 
     user_posts.each do |post|
         Vote.create(user_id: user.id, post_id: post.id, value: 1)
+    end
+
+    Post.all.each do |post|
+      3.times {
+        post.comments.create(
+          { 
+            user_id: user.id, 
+            content: Faker::Lorem.paragraph(sentence_count: rand(1..21))
+          }
+        )
+      }
     end
 end
