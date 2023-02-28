@@ -68,7 +68,7 @@ function App() {
           Made by Tao Liu 
         </Typography >
         
-      <Link href="https://github.com/taoliu12/discussion-board-react-client" target="_blank" rel="noopener">
+      <Link href="https://github.com/taoliu12/discussion-board-rails-react" target="_blank" rel="noopener">
         <GitHubIcon sx={{ display: { fontSize: '23px', color: 'gray'}, mr: 1 }} />
       </Link>
       <Link href="https://www.linkedin.com/in/tao-liu-228105176/" target="_blank" rel="noopener">
