@@ -38,9 +38,14 @@ export default function Comments({comments}) {
         
         {
           comments ? 
-          comments.map((comment) => (  //wait until both comments && loggedInUser are loaded, otherwise get error in devtools sometimes
-              <Card sx={{textAlign: 'left', borderWidth: '1px', borderColor: '#1976d2', backgroundColor: 'white', marginY: '15px', paddingX: '15px'}} variant="outlined">
-                <p>{comment.attributes.content} by {comment.attributes.author_name}</p> 
+          comments
+          .sort((a, b) => (new Date(a.attributes.created_at) < new Date(b.attributes.created_at)) ? 1 : -1) //list comments in latest order
+          .map((comment) => (
+            <Card sx={{textAlign: 'left', borderWidth: '1px', borderColor: '#1976d2', backgroundColor: 'transparent', marginY: '15px', paddingX: '15px'}} variant="outlined">
+                <div class='comment-card' >
+                  <p>{comment.attributes.content}</p>
+                  <p>{comment.attributes.author_name} - {comment.attributes.formatted_created_at}</p> 
+                </div>
               </Card>
             )
           ) : <p><LoadingButton loading sx={{my: '30px', fontSize: '20px'}}/></p>

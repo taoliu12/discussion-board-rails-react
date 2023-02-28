@@ -159,7 +159,7 @@ console.log("postshow post", post )
     </div>
     </Card>}
     <Box m='left' sx={{ textAlign: 'left', minWidth: 275, maxWidth: 1000 }}>  
-      <NewCommentForm setComments={setComments}/>
+      {loggedInUser ? <NewCommentForm setComments={setComments}/> : <p>Login to post a comment</p>}
       <Comments comments={comments}/>
     </Box>
   </>
