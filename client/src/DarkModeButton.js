@@ -36,33 +36,12 @@ export default function DarkModeButton() {
     }, [darkMode])
     
     return (
-      <div className='dark-mode-div'> 
-       <div aria-owns={open ? 'mouse-over-popover' : undefined}
-          aria-haspopup="true"
-          onMouseEnter={handlePopoverOpen}
-          onMouseLeave={handlePopoverClose}> 
-        <IconButton sx={{ ml: 1 }} onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)} color="inherit">
-         <Brightness4Icon />
+      <div title='Toggle Dark Mode' className='dark-mode-div' >  
+        <IconButton  sx={{ mx: 1 }} onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)} color="inherit">
+         <Brightness4Icon alt='dark '/>
         </IconButton>
-        </div>
-        <Popover
-            id="mouse-over-popover"
-            sx={{pointerEvents: 'none'}}
-            open={open}
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            onClose={handlePopoverClose}
-            disableRestoreFocus
-          >
-            <Typography sx={{ p: 0.5 }}>Toggle Dark Mode</Typography>
-          </Popover>
+
+   
       </div>
     )
   }
