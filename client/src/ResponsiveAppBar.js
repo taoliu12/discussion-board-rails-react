@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-
+import DarkModeButton from './DarkModeButton';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -153,7 +153,7 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
               </> }
               {/* <NavbarButton item='About' route='/about'/>       */}
           </Box>
-
+          <DarkModeButton />
         { loggedInUser &&
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
