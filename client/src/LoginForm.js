@@ -8,7 +8,6 @@ export default function LoginForm({setLoggedInUser}) {
     const [ userToLogin , updateUserToLoginInfo ] = useState({username: "", password: ""});
     const [customError, setCustomError] = useState('')
     const navigate = useNavigate();
-
     
       const handleLoginSubmit = ( userToLogin ) =>{ 
         fetch( "/login", 
