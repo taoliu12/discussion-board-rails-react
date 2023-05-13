@@ -137,9 +137,8 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
                   </Link>           
                                 
                 ] }
-  </Menu>
+            </Menu>
           </Box>
-          
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', md: 'flex' } }}> 
               <NavbarButton item='All Posts' route='/posts'/>      
@@ -154,7 +153,8 @@ function ResponsiveAppBar({loggedInUser, handleLogout}) {
               {/* <NavbarButton item='About' route='/about'/>       */}
           </Box>
           <DarkModeButton />
-        { loggedInUser &&
+
+          { loggedInUser &&
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
