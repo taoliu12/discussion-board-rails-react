@@ -56,7 +56,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         backgroundColor: "light blue",
         textShadow: "0px 0px 3px #00000",
         zIndex: "11",
-        height: "70px",
+        height: "65px",
       }}
     >
       <Container
@@ -89,12 +89,10 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               mr: 2,
               display: { xs: "none", md: "flex" },
               fontFamily: "Fredoka One",
-              fontWeight: 500,
-              fontSize: "25px",
-              letterSpacing: ".3rem",
+              fontSize: "30px",
+              letterSpacing: "2px",
               color: "inherit",
               textDecoration: "none",
-              pb: 1
             }}
           >
             Talky
