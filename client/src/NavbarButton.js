@@ -16,11 +16,10 @@ export default function NavbarButton({ item, route }) {
       <Button
         sx={{
           mx: 0.7,
-          my: 2,
-          fontSize: "1.2rem",
+          my: 0,
+          fontSize: "1.3rem",
           color: "white",
           display: "block",
-          boxShadow: "0px 0px 3px #00000",
         }}
       >
         {item}
