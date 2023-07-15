@@ -65,7 +65,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         <Toolbar
           disableGutters
           sx={{
-            alignItems: "top",
+            alignItems: "top",             
           }}
         >
           <Link to="/posts">
@@ -75,7 +75,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                   color: "white",
                   fontSize: "33px",
                   xs: "none",
-                  sm: "flex",
+                  sm: "flex"
                 },
                 mr: 1,
               }}
@@ -94,6 +94,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              pb: 1
             }}
           >
             Talky
@@ -168,7 +169,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             sx={{
               flexGrow: 1,
               display: { xs: "none", sm: "flex", md: "flex" },
-              alignItems: "top",
+              alignItems: "top", 
             }}
           >
             <NavbarButton item="All Posts" route="/posts" />
