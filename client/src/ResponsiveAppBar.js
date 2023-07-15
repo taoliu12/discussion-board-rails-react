@@ -1,5 +1,5 @@
 import * as React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import DarkModeButton from "./DarkModeButton";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -10,11 +10,9 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ForumIcon from "@mui/icons-material/Forum";
-import { textShadow } from "@mui/system";
 import NavbarButton from "./NavbarButton";
 
 const pages = [
@@ -54,18 +52,15 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
         color: "white",
         position: `fixed !important`,
         backgroundColor: "light blue",
-        textShadow: "0px 0px 3px #00000",
         zIndex: "11",
         height: "65px",
       }}
     >
-      <Container
-        maxWidth="xl"
-      >
+      <Container>
         <Toolbar
           disableGutters
           sx={{
-            alignItems: "top",             
+            alignItems: "top",
           }}
         >
           <Link to="/posts">
@@ -75,7 +70,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                   color: "white",
                   fontSize: "33px",
                   xs: "none",
-                  sm: "flex"
+                  sm: "flex",
                 },
                 mr: 1,
               }}
@@ -162,12 +157,11 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
                   ]}
             </Menu>
           </Box>
-
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", sm: "flex", md: "flex" },
-              alignItems: "top", 
+              alignItems: "top",
             }}
           >
             <NavbarButton item="All Posts" route="/posts" />

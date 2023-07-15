@@ -1,18 +1,10 @@
 import * as React from "react";
-import { styled } from '@mui/material/styles';
-import Link from "@mui/material/Link";
+import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
-
-const StyledLink = styled(Link)`
-  color: white;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
+ 
 export default function NavbarButton({ item, route }) {
   return (
-    <StyledLink className="top-nav-bar-link" to={route}>
+    <NavLink className="top-nav-bar-link" to={route}>
       <Button
         sx={{
           mx: 0.7,
@@ -20,10 +12,13 @@ export default function NavbarButton({ item, route }) {
           fontSize: "1.3rem",
           color: "white",
           display: "block",
+          "&:hover": {
+            textDecoration: "underline",
+          },
         }}
       >
         {item}
       </Button>
-    </StyledLink>
+    </NavLink>
   );
 }
