@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
     has_many :votes, :dependent => :destroy
-    has_many :comments, :dependent => :destroy
+    has_many :comments, -> { where(parent_comment_id: nil) }, dependent: :destroy
     has_many :users, through: :votes
     belongs_to :user, foreign_key: "author_id"
 

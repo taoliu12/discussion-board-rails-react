@@ -3,13 +3,13 @@ import Card from "@mui/material/Card";
 import NewCommentForm from "./NewCommentForm";
 import { Button } from "@mui/material";
 
-export default function Comment({ comment }) {
+export default function Comment({ comment, setComments }) {
   const [toggleReplyForm, setToggleReplyForm] = useState(false);
 
   const handleToggleReply = () => {
     setToggleReplyForm(true);
   };
-
+  debugger;
   return (
     <>
       <Card
@@ -31,7 +31,16 @@ export default function Comment({ comment }) {
         </p>
         <Button onClick={handleToggleReply}>Reply</Button>
       </Card>
-      {toggleReplyForm && <NewCommentForm />}
+      {toggleReplyForm && (
+        <NewCommentForm
+          parentCommentId={comment.id}
+          setComments={setComments}
+        />
+      )}
+      {comment.relationships.child_comments.data &&
+        comment.relationships.child_comments.data.map((child_comment) => (
+          <Comment comment={child_comment} setComments={setComments} />
+        ))}
     </>
   );
 }

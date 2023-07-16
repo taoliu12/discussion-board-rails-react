@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def show        
-    render json: PostSerializer.new(@post, {include: [:comments]}).serialized_json
+    render json: PostSerializer.new(@post, {include: [:comments]}).serialized_json     
   end
 
   def edit     

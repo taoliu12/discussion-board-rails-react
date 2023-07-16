@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Comment from "./Comment";
 
-export default function Comments({ comments }) {
-  // const [comments, setComments] = useState(null);
+export default function Comments({ comments, setComments }) {
+  // const [comments, setComments] = useState(comments);
 
   // const handleChange = (event) => {
   //   const sortedComments = sortComments(comments, event.target.value);
@@ -45,7 +45,7 @@ export default function Comments({ comments }) {
               : -1
           ) //list comments in latest order
           .map((comment) => {             
-            return <Comment comment={comment} />;
+            return <Comment comment={comment} setComments={setComments}/>;
           })
       ) : (
         <p>
