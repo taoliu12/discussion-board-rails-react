@@ -37,14 +37,15 @@ export default function Comment({ comment, setComments }) {
         <Button onClick={displayReplyForm}>Reply</Button>
       </Card>
       {toggleReplyForm && (
-        <Box display="flex" alignItems="top" minWidth="500px">
-          <NewCommentForm
-            parentCommentId={comment.id}
-            setComments={setComments}
-          />
-          <IconButton onClick={hideReplyForm} sx={{ width: 50, height: 50 }}>
+        <Box>           
+            <NewCommentForm
+              hideReplyForm={hideReplyForm}
+              parentCommentId={comment.id}
+              setComments={setComments}
+            />           
+          {/* <IconButton onClick={hideReplyForm} sx={{ width: 50, height: 50 }}>
             <CloseIcon />
-          </IconButton>
+          </IconButton> */}
         </Box>
       )}
 

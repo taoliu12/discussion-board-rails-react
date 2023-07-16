@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function NewCommentForm({ setComments, parentCommentId }) {
+export default function NewCommentForm({
+  setComments,
+  parentCommentId,
+  hideReplyForm,
+}) {
   const {
     register,
-    handleSubmit,
-    watch,
+    handleSubmit,     
     reset,
     formState: { errors },
   } = useForm();
 
-  const [customError, setCustomError] = useState("");
-  const navigate = useNavigate();
+  const [customError, setCustomError] = useState("");   
   let { postId } = useParams();
 
   const handleFormSubmit = (data) => {
-    // debugger
     fetch(`/posts/${postId}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -29,6 +30,7 @@ export default function NewCommentForm({ setComments, parentCommentId }) {
           console.log("new comment submitted", json);
           setComments(comments);
           reset({ content: "" });
+          hideReplyForm();
         } else {
           setCustomError("Something went wrong. Please try again.");
           reset({ content: "" });
