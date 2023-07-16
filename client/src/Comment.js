@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import NewCommentForm from "./NewCommentForm";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 export default function Comment({ comment, setComments }) {
   const [toggleReplyForm, setToggleReplyForm] = useState(false);
@@ -37,10 +37,19 @@ export default function Comment({ comment, setComments }) {
           setComments={setComments}
         />
       )}
-      {comment.relationships.child_comments.data &&
-        comment.relationships.child_comments.data.map((child_comment) => (
-          <Comment comment={child_comment} setComments={setComments} />
-        ))}
+
+{comment.attributes.child_comments && (
+  <Box sx={{ pl: 2 }}>
+    {comment.attributes.child_comments.map((child_comment) => (
+      <Comment
+        comment={child_comment.data}
+        setComments={setComments}
+        key={child_comment.id}
+      />
+    ))}
+  </Box>
+)}
+
     </>
   );
 }
