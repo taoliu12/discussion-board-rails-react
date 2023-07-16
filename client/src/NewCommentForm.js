@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function NewCommentForm({ setComments }) {
+export default function NewCommentForm({ setComments, parentCommentId }) {
   const {
     register,
     handleSubmit,
@@ -10,11 +10,13 @@ export default function NewCommentForm({ setComments }) {
     reset,
     formState: { errors },
   } = useForm();
+
   const [customError, setCustomError] = useState("");
   const navigate = useNavigate();
   let { postId } = useParams();
 
   const handleFormSubmit = (data) => {
+    // debugger
     fetch(`/posts/${postId}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -47,6 +49,12 @@ export default function NewCommentForm({ setComments }) {
             placeholder="Create a Comment"
             name="content"
             {...register("content", { required: true })}
+          />
+          <input
+            type="hidden"
+            name="parent_comment_id"
+            value={parentCommentId}
+            {...register("parent_comment_id")}
           />
           <div>
             {" "}
