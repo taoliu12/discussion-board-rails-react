@@ -4,7 +4,7 @@ class CommentSerializer
 
   attribute :child_comments do |comment|
     comment.child_comments.map do |child_comment|
-      ChildCommentSerializer.new(child_comment).as_json
+      CommentSerializer.new(child_comment).as_json
     end
   end
 end
