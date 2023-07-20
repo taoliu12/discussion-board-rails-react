@@ -19,9 +19,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link, Typography} from '@mui/material';
 import ScrollToTop from './components/ScrollToTop';
 import Toolbar from '@mui/material/Toolbar';
+import { useUser } from './UserContext';
 
 function App() {
-  const [ loggedInUser , setLoggedInUser ] = useState( null )
+  const { loggedInUser, setLoggedInUser } = useUser();
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
