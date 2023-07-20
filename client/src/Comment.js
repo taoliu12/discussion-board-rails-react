@@ -4,8 +4,10 @@ import NewCommentForm from "./NewCommentForm";
 import { Box, Button } from "@mui/material";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useUser } from './UserContext';
 
 export default function Comment({ comment, setComments }) {
+  const { loggedInUser } = useUser();
   const [toggleReplyForm, setToggleReplyForm] = useState(false);
 
   const displayReplyForm = () => {
@@ -34,7 +36,7 @@ export default function Comment({ comment, setComments }) {
           {comment.attributes.author_name} -{" "}
           {comment.attributes.formatted_created_at}
         </p>
-        <Button onClick={displayReplyForm}>Reply</Button>
+        {loggedInUser && <Button onClick={displayReplyForm}>Reply</Button>}
       </Card>
       {toggleReplyForm && (
         <Box>           
