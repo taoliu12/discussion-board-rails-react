@@ -13,7 +13,7 @@
 .new-post-input {
   width: 100%;
   height: 2.1em;
-  border-radius: 4px;   
+  border-radius: 4px;
   border: 1px solid #cccccc;
   transition: border 0.4s ease-out;
   padding: 13px;
@@ -27,7 +27,7 @@
   max-width: 70%;
   margin-left: auto;
   margin-right: auto;
-  
+
   textarea {
     width: 100%;
     height: 150px;
@@ -38,7 +38,7 @@
     font-family: Oxygen, sans-serif;
     font-size: 19px;
     resize: none;
-  } 
+  }
 }
 
 .login-form-container {
@@ -46,7 +46,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .input-group {
   display: flex;
@@ -64,23 +63,25 @@
 }
 
 /* //Input */
+input {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
 .login-input {
   width: 100%;
   height: 2.1em;
-  border-radius: 4px;   
-  border: 1px solid var(--blue-theme);
   transition: border 0.4s ease-out;
   padding: 13px;
-  font-family: Oxygen, sans-serif;
+  font-family: Noto Sans, sans-serif;
   font-size: 19px;
   color: #3e3e42;
-  background: rgba(15, 15, 15, 0.01);
-  background-color: rgba(15, 15, 15, 0.01);
 }
 
 /* //Input Placeholder */
 .login-input::placeholder {
-  font-family: Oxygen, sans-serif;
+  font-family: Noto Sans, sans-serif;
   font-size: 16px;
   color: rgba(46, 213, 116, 0.839);
   color: rgba(15, 15, 15, 0.4);
@@ -88,11 +89,11 @@
 
 .login-btn {
   padding: 11px 44px;
-  background-color: #417cef;   
+  color: white;
+  background-color: #417cef;
   font-size: 18px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-family: Oxygen, sans-serif;
-  background-color: rgba(15, 15, 15, 0.03);
   margin-top: 20px;
   border: 2px solid #417cef;
   transition: background-color 0.3s ease-out;
@@ -107,7 +108,7 @@
 
 .small-submit-btn {
   padding: 5px 12px;
-  background-color: #417cef;   
+  background-color: #417cef;
   font-size: 1rem;
   border-radius: 5px;
   border-width: 0px;
