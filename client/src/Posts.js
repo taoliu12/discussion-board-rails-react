@@ -40,7 +40,7 @@ export default function Posts({loggedInUser}) {
   return (
       <Box m="auto" sx={{ minWidth: 275, maxWidth: 1000 }}>  
       <h2>All Posts</h2>
-      <select onChange={handleChange}>
+      <select id='sort-dropdown' onChange={handleChange}>
         <option value="latest">Latest</option>
         <option value="oldest">Oldest</option>
         <option value="most popular">Most Popular</option>

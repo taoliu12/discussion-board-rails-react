@@ -24,8 +24,8 @@ export default function Comment({ comment, setComments }) {
         sx={{
           textAlign: "left",
           borderWidth: "1px",
-          borderColor: "#1976d2",
-          backgroundColor: "transparent",
+          borderColor: "#cccccc",
+          backgroundColor: "white",
           marginY: "15px",
           paddingX: "15px",
         }}
