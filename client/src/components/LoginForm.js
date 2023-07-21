@@ -9,11 +9,7 @@ export default function LoginForm({ setLoggedInUser }) {
     reset,
     formState: { errors },
   } = useForm();
-  
-  const [userToLogin, updateUserToLoginInfo] = useState({
-    username: "",
-    password: "",
-  });
+
   const [customError, setCustomError] = useState("");
   const navigate = useNavigate();
 
@@ -33,16 +29,6 @@ export default function LoginForm({ setLoggedInUser }) {
           setCustomError("Invalid username or password");
           reset({ username: "", password: "" });
         }
-      });
-  };
-
-  const handleLogout = () => {
-    fetch("/logout", { method: "DELETE" })
-      .then((r) => r.json())
-      .then((deleteResponse) => {
-        //// Pesimistic Rendering
-        setLoggedInUser(null);
-        //// Pesimistic Rendering
       });
   };
 
