@@ -1,25 +1,24 @@
 
-import './App.scss';
-import React, { Component, useState, useEffect } from 'react';
+import './styles/App.scss';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Posts from './Posts';
-import MyPosts from './MyPosts';
-import PostShow from './PostShow';
-import Profile from './Profile';
-import Test from './Test1';
+import Posts from './components/Posts';
+import MyPosts from './components/MyPosts';
+import PostShow from './components/PostShow';
+import Profile from './components/Profile'; 
 
-import NewPost from './NewPost'
-import EditPost from './EditPost'
-import LoginForm from './LoginForm';
-import SignupForm from './SignupForm';
-import ResponsiveAppBar from './ResponsiveAppBar'; 
+import NewPost from './components/NewPost'
+import EditPost from './components/EditPost'
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
+import ResponsiveAppBar from './components/ResponsiveAppBar'; 
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link, Typography} from '@mui/material';
 import ScrollToTop from './components/ScrollToTop';
 import Toolbar from '@mui/material/Toolbar';
-import { useUser } from './UserContext';
+import { useUser } from './components/UserContext';
 
 function App() {
   const { loggedInUser, setLoggedInUser } = useUser();
@@ -62,7 +61,6 @@ function App() {
           <Route path='/posts/new' element={<NewPost posts={posts} setPost={setPosts}/>}/>   
           <Route path='/myposts' element={<MyPosts loggedInUser={loggedInUser}/>}/>   
           <Route path='/profile' element={<Profile loggedInUser={loggedInUser}/>}/>   
-          <Route path='/t' element={<Test/>}/>   
         </Routes>
         </main>
         <br></br>

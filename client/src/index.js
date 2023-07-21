@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./components/reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { UserProvider } from "./UserContext";
+import { UserProvider } from "./components/UserContext";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
