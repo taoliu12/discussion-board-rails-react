@@ -11,6 +11,7 @@ export default function NavbarButton({ item, route }) {
           my: 0,
           textTransform: "none",
           fontSize: "1.3rem",
+          fontWeight: "bold",
           fontFamily: "Noto Sans, sans-serif",
           color: "white",
           display: "block",
