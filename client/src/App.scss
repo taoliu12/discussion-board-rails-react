@@ -6,6 +6,10 @@
   display: flex;
 }
 
+body {
+  background-color: rgb(218, 224, 230);
+}
+
 .top-nav-bar-link {
   font-size: 12pt;
   font-weight: bold;
@@ -49,9 +53,9 @@ footer {
       width: 80%;
       height: 80px;
       padding: 13px;
-      border: 2px solid #ccc;
+      border: 1px solid #cccccc;
       border-radius: 4px;
-      background-color: #f8f8f8;
+      background-color: white;
       font-family: Oxygen, sans-serif;
       font-size: 19px;
     } 

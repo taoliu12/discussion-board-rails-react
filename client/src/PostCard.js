@@ -93,7 +93,7 @@ export default function PostCard({post, loggedInUser}) {
 
   return (
     
-    <Card sx={{ textAlign: 'center', borderWidth: '1px', borderColor: '#1976d2', backgroundColor: 'white', marginY: '15px'}} variant="outlined">
+    <Card sx={{ textAlign: 'center', borderWidth: '1px', borderColor: '#cccccc', backgroundColor: 'white', marginY: '15px'}} variant="outlined">
     <div className="post-card">
       <VotesBox post={post} loggedInUser={loggedInUser}/>
       <div className="post-card-content">

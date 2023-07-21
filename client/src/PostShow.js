@@ -125,7 +125,7 @@ console.log("postshow post", post )
   return (
   <>
     {post && 
-    <Card sx={{ textAlign: 'center', borderColor: 'gray', marginY: '15px'}} variant="outlined">
+    <Card sx={{ textAlign: 'center', borderColor: '#cccccc', marginY: '15px'}} variant="outlined">
     <div className="post-card">
         <VotesBox post={post} loggedInUser={loggedInUser}/>
         <div className="post-card-content">
