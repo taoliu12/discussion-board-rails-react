@@ -10,9 +10,11 @@ Post.destroy_all
 User.destroy_all
 
 users = User.create(
-  [{username: 'user1', password: 'password'}, {username: 'user2', password: 'password'}, {username: 'user3', password: 'password'}, {username: 'user4', password: 'password'}, {username: 'aaaa', password: 'aaaa'}
+  [{username: 'demo', password: 'demo'}, {username: 'user1', password: 'password'}, {username: 'user2', password: 'password'}, {username: 'user3', password: 'password'}, {username: 'user4', password: 'password'}, {username: 'user5', password: 'aaaa'}
   ]
 )
+
+
 
 users.each do |user|
     user_posts = [] 
