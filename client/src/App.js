@@ -16,9 +16,9 @@ import ResponsiveAppBar from './components/ResponsiveAppBar';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link, Typography} from '@mui/material';
-import ScrollToTop from './components/ScrollToTop';
 import Toolbar from '@mui/material/Toolbar';
 import { useUser } from './components/UserContext';
+import BackToTop from './components/ScrollToTop';
 
 function App() {
   const { loggedInUser, setLoggedInUser } = useUser();
@@ -77,7 +77,7 @@ function App() {
         </Link>
         </footer>
       </div> 
-      <ScrollToTop sx={{ mr: 1 }} />
+      <BackToTop />
     </div>
   );
 }
