@@ -30,12 +30,26 @@ users.each do |user|
 
     Post.all.each do |post|
       3.times {
-        post.comments.create(
+        comment = post.comments.create(
           { 
             user_id: user.id, 
             content: Faker::Lorem.paragraph(sentence_count: rand(1..21))
           }
         )
+        child_comment = comment.child_comments.create(
+          { 
+            user_id: user.id, 
+            post_id: post.id,
+            content: Faker::Lorem.paragraph(sentence_count: rand(1..21))
+          }
+        )
+        child_comment.child_comments.create(
+          { 
+            user_id: user.id, 
+            post_id: post.id,
+            content: Faker::Lorem.paragraph(sentence_count: rand(1..21))
+          }
+        )  
       }
     end
 end
