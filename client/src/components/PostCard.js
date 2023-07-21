@@ -86,18 +86,16 @@ export default function PostCard({ post, loggedInUser }) {
   };
 
   return (
-    <Card
+    <Card className="post-card"
       sx={{
         textAlign: "center",
         borderWidth: "1px",
         borderColor: "#cccccc",
-        backgroundColor: "white",
         marginY: "10px",
-        pt: "10px",
+        pt: '20px'
       }}
       variant="outlined"
     >
-      <div className="post-card">
         <VotesBox post={post} loggedInUser={loggedInUser} />
         <div className="post-card-content">
           <NavLink
@@ -117,7 +115,6 @@ export default function PostCard({ post, loggedInUser }) {
             {post.attributes.author_name}
           </p>
         </div>
-      </div>
     </Card>
   );
 }
