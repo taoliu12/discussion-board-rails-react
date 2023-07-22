@@ -83,8 +83,8 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "Fredoka One",               
-              fontSize: "30px",
+              fontFamily: "Fredoka, sans serif",               
+              fontSize: 30,
               letterSpacing: "2px",
               color: "inherit",
               textDecoration: "none",
