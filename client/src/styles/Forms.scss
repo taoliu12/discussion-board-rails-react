@@ -96,17 +96,21 @@ input {
   border-width: 0px;
   font-family: Oxygen, sans-serif;
   cursor: pointer;
+  &:hover {
+    background-color: #5d93ff;
+    color: white;
+  } 
   &.small {
     padding: 5px 15px;
     font-size: 11;
     font-family: Oxygen, sans-serif;
   }
-}
-
-.submit-btn:hover,
-.submit-btn:focus {
-  background-color: #5d93ff;
-  color: white;
+  &.cancel {
+    background-color: gray;
+    &:hover {
+      background-color: rgb(156, 156, 156);
+    }
+  }
 }
 
 .comment-form-container {
@@ -146,4 +150,3 @@ input {
 .show {
   visibility: visible;
 }
-

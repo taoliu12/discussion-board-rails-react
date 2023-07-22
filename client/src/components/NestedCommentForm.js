@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function NewCommentForm({
+export default function NestedCommentForm({
   setComments,
   parentCommentId,
   hideReplyForm,
@@ -64,6 +64,10 @@ export default function NewCommentForm({
           />
           <div>
             <input type="submit" className="submit-btn small" value="Submit" />
+            &nbsp;
+            <button className="submit-btn small cancel" onClick={handleCancel}>
+              Cancel
+            </button>
           </div>
           <p> {customError}</p>
         </form>

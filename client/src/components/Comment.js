@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
-import NewCommentForm from "./NewCommentForm";
+import NestedCommentForm from "./NestedCommentForm";
 import { Box, Button } from "@mui/material";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -40,7 +40,7 @@ export default function Comment({ comment, setComments }) {
       </Card>
       {toggleReplyForm && (
         <Box>           
-            <NewCommentForm
+            <NestedCommentForm
               hideReplyForm={hideReplyForm}
               parentCommentId={comment.id}
               setComments={setComments}
