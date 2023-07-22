@@ -35,7 +35,7 @@ export default function LoginForm({ setLoggedInUser }) {
   return (
     <>
       <h1>Login</h1>
-      <p>Demo account: username - demo, password - demo</p>
+      <p>Demo account - username: <b>demo</b>, password: <b>demo</b></p>
       <div className="login-form-container">
         <form onSubmit={handleSubmit(handleLoginSubmit)}>
           <div className="input-group">
@@ -67,6 +67,7 @@ export default function LoginForm({ setLoggedInUser }) {
               {...register("password", { required: "Password is required:" })}
             />
           </div>
+          <br />
           <input type="submit" className="submit-btn" value="Submit" />
           <p> {customError}</p>
         </form>

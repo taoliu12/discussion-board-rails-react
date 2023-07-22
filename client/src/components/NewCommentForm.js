@@ -60,7 +60,7 @@ export default function NewCommentForm({
           />
           <div>
             {" "}
-            <input type="submit" className="small-submit-btn" />
+            <input type="submit" className="submit-btn small" value="Submit" />
           </div>
           <p> {customError}</p>
         </form>
