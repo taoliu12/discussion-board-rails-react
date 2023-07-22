@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## GNU General Public License (GPL) v3.0
+
+Under this license, you are required to give appropriate credit to the original authors of the code when you distribute it. This means you must provide proper attribution to the project and its contributors.
+
+Please read the [full text of the GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0) for more details about the rights and obligations it grants.

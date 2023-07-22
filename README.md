@@ -23,7 +23,9 @@ npm start --prefix client
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/taoliu12/rails-discussion-board. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## License
+## GNU General Public License (GPL) v3.0
 
-The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Under this license, you are required to give appropriate credit to the original authors of the code when you distribute it. This means you must provide proper attribution to the project and its contributors.
+
+Please read the [full text of the GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0) for more details about the rights and obligations it grants.
 
