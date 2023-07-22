@@ -105,7 +105,7 @@ export default function SignupForm({ setLoggedInUser }) {
               })}
             />
           </div>
-          <input type="submit" className="login-btn" />
+          <input type="submit" className="submit-btn" value="Submit" />
           <p> {customError}</p>
         </form>
       </div>

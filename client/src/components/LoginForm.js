@@ -67,7 +67,7 @@ export default function LoginForm({ setLoggedInUser }) {
               {...register("password", { required: "Password is required:" })}
             />
           </div>
-          <input type="submit" className="login-btn" />
+          <input type="submit" className="submit-btn" value="Submit" />
           <p> {customError}</p>
         </form>
       </div>

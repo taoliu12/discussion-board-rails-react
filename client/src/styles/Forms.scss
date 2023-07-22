@@ -87,7 +87,7 @@ input {
   color: rgba(15, 15, 15, 0.4);
 }
 
-.login-btn {
+.submit-btn {
   padding: 11px 44px;
   color: white;
   background-color: #417cef;
@@ -100,8 +100,8 @@ input {
   cursor: pointer;
 }
 
-.login-btn:hover,
-.login-btn:focus {
+.submit-btn:hover,
+.submit-btn:focus {
   background-color: #417cef;
   color: white;
 }
