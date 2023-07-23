@@ -42,7 +42,7 @@ export default function PostCard({ post, loggedInUser }) {
     <Card
       className="post-card"
       sx={{
-        display: 'flex',
+        display: "flex",
         textAlign: "center",
         borderWidth: "1px",
         borderColor: "#cccccc",
@@ -50,7 +50,10 @@ export default function PostCard({ post, loggedInUser }) {
       }}
       variant="outlined"
     >
-      <Box sx={{ py:1, backgroundColor: '#f8f9fa'}} className='votesBox-container'>
+      <Box
+        sx={{ py: 1, backgroundColor: "#f8f9fa" }}
+        className="votesBox-container"
+      >
         <VotesBox post={post} loggedInUser={loggedInUser} />
       </Box>
 
@@ -73,7 +76,10 @@ export default function PostCard({ post, loggedInUser }) {
         >
           {post.attributes.title}
         </NavLink>
-        <p>{post.attributes.body}</p>
+        <div className="text-container">
+          <p>{post.attributes.body}</p>
+          <div className="text-gradient"></div>
+        </div>
         <p>
           Posted on {post.attributes.formatted_created_at}, by{" "}
           {post.attributes.author_name}

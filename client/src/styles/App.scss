@@ -35,6 +35,26 @@ a {
   text-decoration: underline;
 }
 
+.post-card {
+  .text-container {
+    max-height: 120px; /* Set the maximum height here (adjust as needed) */
+    overflow: hidden;
+    position: relative;
+  }
+  .text-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25px; /* Adjust the height of the gradient as needed */
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
 .post-card Button:hover {
   background-color: #ebf6ff !important;
 }
@@ -93,6 +113,14 @@ footer {
   a,
   svg {
     color: rgb(255, 255, 255);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      to top,
+      #1a202c,
+      rgba(255, 255, 255, 0)
+    );
   }
 }
 

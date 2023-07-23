@@ -21,7 +21,7 @@ users.each do |user|
      10.times {user_posts << user.authored_posts.create(
         { 
           title: Faker::Lorem.sentence, 
-          body: Faker::Lorem.paragraph(sentence_count: rand(1..21))
+          body: Faker::Lorem.paragraph(sentence_count: rand(1..51))
         }
       )
      }
