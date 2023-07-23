@@ -88,11 +88,26 @@ export default function PostShow({ loggedInUser }) {
     <>
       {post && (
         <Card
-          sx={{ textAlign: "center", borderColor: "#cccccc", marginY: "15px" }}
+          sx={{
+            display: "flex",
+            textAlign: "center",
+            borderColor: "#cccccc",
+            marginY: "15px",
+          }}
           variant="outlined"
+          className="post-card"
         >
-          <div className="post-card">
+          <Box sx={{ py:2, }}>
             <VotesBox post={post} loggedInUser={loggedInUser} />
+          </Box>
+          <Box
+            sx={{
+              py: 2,
+              px: 2,
+              flex: 4,
+              textAlign: "left",
+            }}
+          >
             <div className="post-card-content">
               <NavLink
                 to={`/posts/${post.id}`}
@@ -124,7 +139,7 @@ export default function PostShow({ loggedInUser }) {
                 </>
               )}
             </div>
-          </div>
+          </Box>
         </Card>
       )}
       <Box m="left" sx={{ textAlign: "left", minWidth: 275, maxWidth: 1000 }}>
