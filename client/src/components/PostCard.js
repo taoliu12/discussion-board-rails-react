@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import VotesBox from "./VotesBox";
 import Card from "@mui/material/Card";
+import { Box } from "@mui/material";
 
 export default function PostCard({ post, loggedInUser }) {
   const [votes_total, setVotesTotal] = useState(post.attributes.votes_total);
@@ -38,35 +39,46 @@ export default function PostCard({ post, loggedInUser }) {
   }, [loggedInUser, post]);
 
   return (
-    <Card className="post-card"
+    <Card
+      className="post-card"
       sx={{
+        display: 'flex',
         textAlign: "center",
         borderWidth: "1px",
         borderColor: "#cccccc",
         marginY: "10px",
-        pt: '20px'
       }}
       variant="outlined"
     >
+      <Box sx={{ py:1, backgroundColor: "#f8f9fa" }}>
         <VotesBox post={post} loggedInUser={loggedInUser} />
-        <div className="post-card-content">
-          <NavLink
-            className="post-title-link"
-            to={`/posts/${post.id}`}
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-            }}
-            underline="hover"
-          >
-            {post.attributes.title}
-          </NavLink>
-          <p>{post.attributes.body}</p>
-          <p>
-            Posted on {post.attributes.formatted_created_at}, by{" "}
-            {post.attributes.author_name}
-          </p>
-        </div>
+      </Box>
+
+      <Box
+        sx={{
+          pt: 2,
+          px: 2,
+          flex: 4,
+          textAlign: "left",
+        }}
+      >
+        <NavLink
+          className="post-title-link"
+          to={`/posts/${post.id}`}
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+          }}
+          underline="hover"
+        >
+          {post.attributes.title}
+        </NavLink>
+        <p>{post.attributes.body}</p>
+        <p>
+          Posted on {post.attributes.formatted_created_at}, by{" "}
+          {post.attributes.author_name}
+        </p>
+      </Box>
     </Card>
   );
 }
