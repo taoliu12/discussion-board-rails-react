@@ -97,13 +97,13 @@ export default function PostShow({ loggedInUser }) {
           variant="outlined"
           className="post-card"
         >
-          <Box sx={{ py:2, }}>
+          <Box sx={{ py:2, backgroundColor: '#f8f9fa'}} className='votesBox-container'>
             <VotesBox post={post} loggedInUser={loggedInUser} />
           </Box>
           <Box
             sx={{
               py: 2,
-              px: 2,
+              px: 3,
               flex: 4,
               textAlign: "left",
             }}

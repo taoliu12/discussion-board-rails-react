@@ -50,14 +50,14 @@ export default function PostCard({ post, loggedInUser }) {
       }}
       variant="outlined"
     >
-      <Box sx={{ py:1, }}>
+      <Box sx={{ py:1, backgroundColor: '#f8f9fa'}} className='votesBox-container'>
         <VotesBox post={post} loggedInUser={loggedInUser} />
       </Box>
 
       <Box
         sx={{
           py: 2,
-          px: 2,
+          px: 3,
           flex: 4,
           textAlign: "left",
         }}
