@@ -37,54 +37,6 @@ export default function PostCard({ post, loggedInUser }) {
     loggedInUser && getAndSetCurrentUserVote(post.attributes);
   }, [loggedInUser, post]);
 
-  const handleUpVote = () => {
-    fetch(`posts/${post.id}/votes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ vote: { value: 1 } }),
-    })
-      .then((r) => r.json())
-      .then((post) => {
-        console.log(post);
-
-        if (!post.error) {
-          setVotesTotal(post.data.attributes.votes_total);
-          getAndSetCurrentUserVote(post.data.attributes);
-        }
-      });
-  };
-
-  const handleDownVote = () => {
-    fetch(`posts/${post.id}/votes`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ vote: { value: -1 } }),
-    })
-      .then((r) => r.json())
-      .then((post) => {
-        console.log(post);
-
-        if (!post.error) {
-          setVotesTotal(post.data.attributes.votes_total);
-          getAndSetCurrentUserVote(post.data.attributes);
-        }
-      });
-  };
-
-  const handleDeletePost = () => {
-    // debugger
-    fetch(`${post.id}`, {
-      method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((r) => r.json())
-      .then((json) => {
-        if (!json.error) {
-          navigate("/posts");
-        }
-      });
-  };
-
   return (
     <Card className="post-card"
       sx={{
