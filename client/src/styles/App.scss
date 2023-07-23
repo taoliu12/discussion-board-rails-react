@@ -59,6 +59,28 @@ footer {
 .post-card {
   display: flex;
   padding: 11px;
+  .text-container {
+    max-height: 100px; /* Set the maximum height here (adjust as needed) */
+    overflow: hidden;
+    position: relative;
+  }
+  .text-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Adjust the height of the gradient as needed */
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
+
+.post-card-votes-box {
+  flex: 1;
+  max-width: 120px;
 }
 
 .post-card-votes-box {

@@ -38,35 +38,39 @@ export default function PostCard({ post, loggedInUser }) {
   }, [loggedInUser, post]);
 
   return (
-    <Card className="post-card"
+    <Card
+      className="post-card"
       sx={{
         textAlign: "center",
         borderWidth: "1px",
         borderColor: "#cccccc",
         marginY: "10px",
-        pt: '20px'
+        pt: "20px",
       }}
       variant="outlined"
     >
-        <VotesBox post={post} loggedInUser={loggedInUser} />
-        <div className="post-card-content">
-          <NavLink
-            className="post-title-link"
-            to={`/posts/${post.id}`}
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-            }}
-            underline="hover"
-          >
-            {post.attributes.title}
-          </NavLink>
+      <VotesBox post={post} loggedInUser={loggedInUser} />
+      <div className="post-card-content">
+        <NavLink
+          className="post-title-link"
+          to={`/posts/${post.id}`}
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+          }}
+          underline="hover"
+        >
+          {post.attributes.title}
+        </NavLink>
+        <div className="text-container">
           <p>{post.attributes.body}</p>
-          <p>
-            Posted on {post.attributes.formatted_created_at}, by{" "}
-            {post.attributes.author_name}
-          </p>
+          <div className="text-gradient"></div>
         </div>
+        <p>
+          Posted on {post.attributes.formatted_created_at}, by{" "}
+          {post.attributes.author_name}
+        </p>
+      </div>
     </Card>
   );
 }
