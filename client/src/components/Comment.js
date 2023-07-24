@@ -19,16 +19,24 @@ export default function Comment({ comment, setComments }) {
 
   return (
     <Box sx={{ backgroundColor: "white", display: "flex" }}>
-      <Box sx={{ textAlign: "center", width: "30px", pt: 1.8}}>
-        <IconButton>
+      <Box
+        sx={{
+          textAlign: "center",
+          width: 30,
+          pt: 1.5,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: 'center',
+        }}
+      >
+        <IconButton sx={{ color: 'gray' }}>
           <ExpandIcon />
         </IconButton>
         <Box
           sx={{
             backgroundColor: "#ccc",
-            height: "70%",
+            flex: 1,
             width: "3px",
-            m: "auto",
           }}
         />
       </Box>
