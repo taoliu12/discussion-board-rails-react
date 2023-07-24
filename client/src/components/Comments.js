@@ -34,6 +34,10 @@ export default function Comments({ comments, setComments }) {
         textAlign: "left",
         minWidth: 275,
         maxWidth: 1000,
+        px: 3,
+        pt: 1,
+        pb: 3,
+        borderRadius: 1,
       }}
     >
       <h3>All Comments</h3>
@@ -43,7 +47,6 @@ export default function Comments({ comments, setComments }) {
           <option value="most popular">Most Popular</option>
           <option value="least popular">Least Popular</option>
         </select> */}
-
       {comments ? (
         comments
           .sort((a, b) =>

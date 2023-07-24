@@ -9,6 +9,7 @@ import { useUser } from "./UserContext";
 export default function Comment({ comment, setComments }) {
   const { loggedInUser } = useUser();
   const [toggleReplyForm, setToggleReplyForm] = useState(false);
+  const [toggleExpand, setToggleExpand] = useState(true);
 
   const displayReplyForm = () => {
     setToggleReplyForm(true);
@@ -16,20 +17,27 @@ export default function Comment({ comment, setComments }) {
   const hideReplyForm = () => {
     setToggleReplyForm(false);
   };
+  const handleToggleExpand = () => {
+    if (toggleExpand) {
+      setToggleExpand(false);
+    } else {
+      setToggleExpand(true);
+    }
+  };
 
-  return (
+  const commentContainer = (
     <Box sx={{ backgroundColor: "white", display: "flex" }}>
       <Box
         sx={{
           textAlign: "center",
-          width: 30,
+          width: 20,
           pt: 1.5,
           display: "flex",
           flexDirection: "column",
-          alignItems: 'center',
+          alignItems: "center",
         }}
       >
-        <IconButton sx={{ color: 'gray' }}>
+        <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
           <ExpandIcon />
         </IconButton>
         <Box
@@ -83,5 +91,13 @@ export default function Comment({ comment, setComments }) {
         )}
       </Box>
     </Box>
+  );
+
+  return toggleExpand ? (
+    commentContainer
+  ) : (
+    <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
+      <ExpandIcon />
+    </IconButton>
   );
 }
