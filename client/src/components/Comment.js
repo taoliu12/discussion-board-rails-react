@@ -96,8 +96,22 @@ export default function Comment({ comment, setComments }) {
   return toggleExpand ? (
     commentContainer
   ) : (
-    <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
-      <ExpandIcon />
-    </IconButton>
+    <Box sx={{ backgroundColor: "white", display: "flex" }}>
+      <Box
+        sx={{
+          textAlign: "center",
+          width: 20,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
+          <ExpandIcon />
+        </IconButton>
+      </Box>
+      <Box  sx={{ pl: 2, pt: 1 }}><i>expand comment</i></Box>
+      
+    </Box>
   );
 }
