@@ -3,8 +3,8 @@ import Card from "@mui/material/Card";
 import NestedCommentForm from "./NestedCommentForm";
 import { Box, Button } from "@mui/material";
 import { IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import { useUser } from './UserContext';
+import ExpandIcon from "@mui/icons-material/Expand";
+import { useUser } from "./UserContext";
 
 export default function Comment({ comment, setComments }) {
   const { loggedInUser } = useUser();
@@ -18,46 +18,62 @@ export default function Comment({ comment, setComments }) {
   };
 
   return (
-    <Box sx={{ backgroundColor: 'white'}}>
-      <Card
-        className="comment-card"
-        sx={{
-          textAlign: "left",
-          borderWidth: "0px",
-          borderColor: "#cccccc",
-          backgroundColor: "white",
-          marginY: "15px",
-          paddingX: "15px",
-        }}
-        variant="outlined"
-      >
-        <p>{comment.attributes.content}</p>
-        <p>
-          {comment.attributes.author_name} -{" "}
-          {comment.attributes.formatted_created_at}
-        </p>
-        {loggedInUser && <Button onClick={displayReplyForm}>Reply</Button>}
-      </Card>
-      {toggleReplyForm && (
-        <Box>           
+    <Box sx={{ backgroundColor: "white", display: "flex" }}>
+      <Box sx={{ textAlign: "center", width: "30px", pt: 1.8}}>
+        <IconButton>
+          <ExpandIcon />
+        </IconButton>
+        <Box
+          sx={{
+            backgroundColor: "#ccc",
+            height: "70%",
+            width: "3px",
+            m: "auto",
+          }}
+        />
+      </Box>
+      <Box>
+        <Card
+          className="comment-card"
+          sx={{
+            textAlign: "left",
+            borderWidth: "0px",
+            borderColor: "#cccccc",
+            backgroundColor: "white",
+            marginY: "0px",
+            paddingX: "15px",
+            paddingY: "0px",
+          }}
+          variant="outlined"
+        >
+          <p>{comment.attributes.content}</p>
+          <p>
+            {comment.attributes.author_name} -{" "}
+            {comment.attributes.formatted_created_at}
+          </p>
+          {loggedInUser && <Button onClick={displayReplyForm}>Reply</Button>}
+        </Card>
+        {toggleReplyForm && (
+          <Box>
             <NestedCommentForm
               hideReplyForm={hideReplyForm}
               parentCommentId={comment.id}
               setComments={setComments}
             />
-        </Box>
-      )}
-      {comment.attributes.child_comments && (
-        <Box sx={{ pl: 3 }}>
-          {comment.attributes.child_comments.map((child_comment) => (
-            <Comment
-              comment={child_comment.data}
-              setComments={setComments}
-              key={child_comment.id}
-            />
-          ))}
-        </Box>
-      )}
+          </Box>
+        )}
+        {comment.attributes.child_comments && (
+          <Box sx={{ pl: 3 }}>
+            {comment.attributes.child_comments.map((child_comment) => (
+              <Comment
+                comment={child_comment.data}
+                setComments={setComments}
+                key={child_comment.id}
+              />
+            ))}
+          </Box>
+        )}
+      </Box>
     </Box>
   );
 }
