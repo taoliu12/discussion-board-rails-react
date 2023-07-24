@@ -18,12 +18,12 @@ export default function Comment({ comment, setComments }) {
   };
 
   return (
-    <>
+    <Box sx={{ backgroundColor: 'white'}}>
       <Card
         className="comment-card"
         sx={{
           textAlign: "left",
-          borderWidth: "1px",
+          borderWidth: "0px",
           borderColor: "#cccccc",
           backgroundColor: "white",
           marginY: "15px",
@@ -44,13 +44,9 @@ export default function Comment({ comment, setComments }) {
               hideReplyForm={hideReplyForm}
               parentCommentId={comment.id}
               setComments={setComments}
-            />           
-          {/* <IconButton onClick={hideReplyForm} sx={{ width: 50, height: 50 }}>
-            <CloseIcon />
-          </IconButton> */}
+            />
         </Box>
       )}
-
       {comment.attributes.child_comments && (
         <Box sx={{ pl: 3 }}>
           {comment.attributes.child_comments.map((child_comment) => (
@@ -62,6 +58,6 @@ export default function Comment({ comment, setComments }) {
           ))}
         </Box>
       )}
-    </>
+    </Box>
   );
 }

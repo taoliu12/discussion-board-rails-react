@@ -27,7 +27,15 @@ export default function Comments({ comments, setComments }) {
   // };
 
   return (
-    <Box m="left" sx={{ textAlign: "left", minWidth: 275, maxWidth: 1000 }}>
+    <Box
+      m="left"
+      sx={{
+        // backgroundColor: "white",
+        textAlign: "left",
+        minWidth: 275,
+        maxWidth: 1000,
+      }}
+    >
       <h3>All Comments</h3>
       {/* <select onChange={handleChange}>
           <option value="latest">Latest</option>
@@ -44,8 +52,8 @@ export default function Comments({ comments, setComments }) {
               ? 1
               : -1
           ) //list comments in latest order
-          .map((comment) => {             
-            return <Comment comment={comment} setComments={setComments}/>;
+          .map((comment) => {
+            return <Comment comment={comment} setComments={setComments} />;
           })
       ) : (
         <p>
