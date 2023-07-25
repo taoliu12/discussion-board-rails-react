@@ -110,8 +110,9 @@ export default function Comment({ comment, setComments }) {
           <ExpandIcon />
         </IconButton>
       </Box>
-      <Box  sx={{ pl: 2, pt: 1 }}><i>expand comment</i></Box>
-      
+      <Box sx={{ pl: 2, pt: 1 }}>
+        <i>comment collapsed</i>
+      </Box>
     </Box>
   );
 }
