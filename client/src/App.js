@@ -18,7 +18,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import {Link, Typography} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import { useUser } from './components/UserContext';
-import BackToTop from './components/ScrollToTop';
+import BackToTop from './components/BackToTop';
 
 function App() {
   const { loggedInUser, setLoggedInUser } = useUser();
