@@ -27,10 +27,10 @@ export default function Comments({ comments, setComments }) {
   // };
 
   return (
-    <Box
+    <Box className="comments-container"
       m="left"
       sx={{
-        backgroundColor: "white",
+        backgroundColor: 'white',
         textAlign: "left",
         minWidth: 275,
         maxWidth: 1000,

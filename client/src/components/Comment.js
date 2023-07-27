@@ -26,7 +26,7 @@ export default function Comment({ comment, setComments }) {
   };
 
   const commentContainer = (
-    <Box sx={{ backgroundColor: "white", display: "flex" }}>
+    <Box sx={{ display: "flex" }}>
       <Box
         sx={{
           textAlign: "center",
@@ -96,9 +96,10 @@ export default function Comment({ comment, setComments }) {
   return toggleExpand ? (
     commentContainer
   ) : (
-    <Box sx={{ backgroundColor: "white", display: "flex" }}>
+    <Box sx={{ backgroundColor: 'transparent', display: "flex" }}>
       <Box
         sx={{
+          backgroundColor: 'transparent',
           textAlign: "center",
           width: 20,
           display: "flex",
@@ -106,7 +107,7 @@ export default function Comment({ comment, setComments }) {
           alignItems: "center",
         }}
       >
-        <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
+        <IconButton onClick={handleToggleExpand}>
           <ExpandIcon />
         </IconButton>
       </Box>
