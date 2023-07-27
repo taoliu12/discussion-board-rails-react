@@ -48,7 +48,7 @@ export default function Comment({ comment, setComments }) {
           }}
         />
       </Box>
-      <Box>
+      <Box sx={{ flex: 1 }}>
         <Card
           className="comment-card"
           sx={{
@@ -70,7 +70,7 @@ export default function Comment({ comment, setComments }) {
           {loggedInUser && <Button onClick={displayReplyForm}>Reply</Button>}
         </Card>
         {toggleReplyForm && (
-          <Box>
+          <Box sx={{ width: "100%" }}>
             <NestedCommentForm
               hideReplyForm={hideReplyForm}
               parentCommentId={comment.id}
