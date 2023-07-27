@@ -31,8 +31,7 @@ export default function NewPostForm() {
       return (
       <>
         <h2>Create a New Post</h2>
-        <div className="post-form-container">
-            
+        <div className="post-form-container">    
           <form onSubmit={handleSubmit(handleFormSubmit)}>
 
               <p>{errors.title && <span className='formError'>(This field is required)</span>}</p>
@@ -50,7 +49,8 @@ export default function NewPostForm() {
                 name="body" 
                 {...register("body", { required: true })}
               />
-              <input type="submit"  className="login-btn"/>
+              <br /><br />
+              <input type="submit" className="submit-btn"/>
               <p> {customError}</p>
           </form>
         </div>

@@ -66,7 +66,6 @@ export default function EditPostForm({posts, loggedInUser}) {
         <div className="post-form-container">
             
           <form onSubmit={handleSubmit(handleFormSubmit)}>
-
               <p>{errors.title && <span className='formError'>(This field is required)</span>}</p>
               <input          
                   type='text'       
@@ -82,7 +81,8 @@ export default function EditPostForm({posts, loggedInUser}) {
                 name="body" 
                 {...register("body", { required: true })}
               />
-              <input type="submit"  className="login-btn"/>
+              <br /><br />
+              <input type="submit" className="submit-btn"/>
               <p> {customError}</p>
           </form>
         </div>
