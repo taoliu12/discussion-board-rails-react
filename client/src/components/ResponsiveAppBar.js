@@ -45,6 +45,72 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
     setAnchorElUser(null);
   };
 
+  const Hamburger = () => {
+    return (
+      <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" }}}>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={handleOpenNavMenu}
+          color="inherit"
+        >
+          <MenuIcon />
+        </IconButton>
+        <Menu
+          id="menu-appbar"
+          anchorEl={anchorElNav}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          open={Boolean(anchorElNav)}
+          onClose={handleCloseNavMenu}
+          sx={{
+            display: { xs: "block", md: "none"}
+          }}
+        >
+          <Link to="/posts">
+            <MenuItem onClick={handleCloseNavMenu} sx={{ color: 'black'}}>
+              <Typography textAlign="center">All Posts</Typography>
+            </MenuItem>
+          </Link>
+          {loggedInUser
+            ? [
+                <Link to="/myposts">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">My Posts</Typography>
+                  </MenuItem>
+                </Link>,
+                <Link to="/posts/new">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">Create Post</Typography>
+                  </MenuItem>
+                </Link>,
+              ]
+            : [
+                <Link to="/signup">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">Sign Up</Typography>
+                  </MenuItem>
+                </Link>,
+                <Link to="/login">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">Login</Typography>
+                  </MenuItem>
+                </Link>,
+              ]}
+        </Menu>
+      </Box>
+    );
+  };
+
   return (
     <AppBar
       position="static"
@@ -83,7 +149,7 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "Fredoka, sans serif",               
+              fontFamily: "Fredoka, sans serif",
               fontSize: 30,
               letterSpacing: "2px",
               color: "inherit",
@@ -92,71 +158,8 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
           >
             Talky
           </Typography>
-          {/*hamburger*/}
-          <Box
-            id="test"
-            sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <Link to="/posts">
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">All Posts</Typography>
-                </MenuItem>
-              </Link>
-              {loggedInUser
-                ? [
-                    <Link to="/myposts">
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">My Posts</Typography>
-                      </MenuItem>
-                    </Link>,
-                    <Link to="/posts/new">
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Create Post</Typography>
-                      </MenuItem>
-                    </Link>,
-                  ]
-                : [
-                    <Link to="/signup">
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Sign Up</Typography>
-                      </MenuItem>
-                    </Link>,
-                    <Link to="/login">
-                      <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center">Login</Typography>
-                      </MenuItem>
-                    </Link>,
-                  ]}
-            </Menu>
-          </Box>
+          <Hamburger />
+
           <Box
             sx={{
               flexGrow: 1,
@@ -231,4 +234,5 @@ function ResponsiveAppBar({ loggedInUser, handleLogout }) {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
