@@ -30,7 +30,7 @@ export default function Comment({ comment, setComments }) {
       <Box
         sx={{
           textAlign: "center",
-          width: 20,
+          width: 15,
           pt: 1.5,
           display: "flex",
           flexDirection: "column",
@@ -41,10 +41,15 @@ export default function Comment({ comment, setComments }) {
           <ExpandIcon />
         </IconButton>
         <Box
+          onClick={handleToggleExpand}
           sx={{
             backgroundColor: "#ccc",
             flex: 1,
             width: "3px",
+            "&:hover": {
+              cursor: "pointer",
+              border: "3px solid currentColor",
+            },
           }}
         />
       </Box>
@@ -96,10 +101,10 @@ export default function Comment({ comment, setComments }) {
   return toggleExpand ? (
     commentContainer
   ) : (
-    <Box sx={{ backgroundColor: 'transparent', display: "flex" }}>
+    <Box sx={{ backgroundColor: "transparent", display: "flex" }}>
       <Box
         sx={{
-          backgroundColor: 'transparent',
+          backgroundColor: "transparent",
           textAlign: "center",
           width: 20,
           display: "flex",
