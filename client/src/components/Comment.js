@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import NestedCommentForm from "./NestedCommentForm";
 import { Box, Button } from "@mui/material";
 import { IconButton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandIcon from "@mui/icons-material/Expand";
-import UnfoldLessIcon from "@mui/icons-material/UnfoldLess";
 
 import { useUser } from "./UserContext";
 
@@ -116,8 +115,7 @@ export default function Comment({ comment, setComments }) {
         }}
       >
         <IconButton onClick={handleToggleExpand}>
-          <ExpandIcon
-          />
+          <ExpandIcon />
         </IconButton>
       </Box>
       <Box sx={{ pl: 1.5, pt: 1 }}>

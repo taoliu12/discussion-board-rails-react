@@ -6,16 +6,8 @@ import NewCommentForm from "./NewCommentForm";
 import VotesBox from "./VotesBox";
 import Comments from "./Comments";
 import Box from "@mui/material/Box";
-
-import Link from "@mui/material/Link";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import ThumbUpOutlined from "@mui/icons-material/ThumbUpOutlined";
-import ThumbDownOutlined from "@mui/icons-material/ThumbDownOutlined";
-import Popover from "@mui/material/Popover";
-import Typography from "@mui/material/Typography";
 
 export default function PostShow({ loggedInUser }) {
   const [votes_total, setVotesTotal] = useState(0);
@@ -24,14 +16,6 @@ export default function PostShow({ loggedInUser }) {
   const [currentUserVote, setCurrentUserVote] = useState({ value: null });
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
-
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
 
   const open = Boolean(anchorEl);
 
@@ -130,32 +114,33 @@ export default function PostShow({ loggedInUser }) {
               {loggedInUser?.id == post?.attributes.author_id && (
                 <>
                   <NavLink to={`/posts/${post.id}/edit`}>
-                    <Button className="edit-del-button" sx={{ my: 2 }}>
+                    <Button>
                       Edit
                     </Button>
                   </NavLink>
-                  <a>
-                    <Button onClick={handleDeletePost} sx={{ my: 2 }}>
-                      Delete
-                    </Button>
-                  </a>
+                  <Button onClick={handleDeletePost}>
+                    Delete
+                  </Button>
                 </>
               )}
             </div>
           </Box>
         </Card>
       )}
-      <Box  className="comments-container"
-      m="left"       sx={{
-        backgroundColor: 'white',
-        textAlign: "left",
-        minWidth: 275,
-        maxWidth: 1000,
-        px: 3,
-        pt: 1,
-        pb: 3,
-        borderRadius: 1,
-      }}>
+      <Box
+        className="comments-container"
+        m="left"
+        sx={{
+          backgroundColor: "white",
+          textAlign: "left",
+          minWidth: 275,
+          maxWidth: 1000,
+          px: 3,
+          pt: 1,
+          pb: 3,
+          borderRadius: 1,
+        }}
+      >
         {loggedInUser ? (
           <NewCommentForm setComments={setComments} />
         ) : (
