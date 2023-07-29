@@ -3,7 +3,10 @@ import Card from "@mui/material/Card";
 import NestedCommentForm from "./NestedCommentForm";
 import { Box, Button } from "@mui/material";
 import { IconButton } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandIcon from "@mui/icons-material/Expand";
+import UnfoldLessIcon from "@mui/icons-material/UnfoldLess";
+
 import { useUser } from "./UserContext";
 
 export default function Comment({ comment, setComments }) {
@@ -30,15 +33,15 @@ export default function Comment({ comment, setComments }) {
       <Box
         sx={{
           textAlign: "center",
-          width: 15,
-          pt: 1.5,
+          width: 5,
+          pt: "6px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
         <IconButton sx={{ color: "gray" }} onClick={handleToggleExpand}>
-          <ExpandIcon />
+          <ExpandMoreIcon />
         </IconButton>
         <Box
           onClick={handleToggleExpand}
@@ -48,7 +51,7 @@ export default function Comment({ comment, setComments }) {
             width: "3px",
             "&:hover": {
               cursor: "pointer",
-              border: "3px solid currentColor",
+              border: "2px solid currentColor",
             },
           }}
         />
@@ -75,7 +78,7 @@ export default function Comment({ comment, setComments }) {
           {loggedInUser && <Button onClick={displayReplyForm}>Reply</Button>}
         </Card>
         {toggleReplyForm && (
-          <Box sx={{ width: "100%" }}>
+          <Box sx={{ pl: 2, width: "100%" }}>
             <NestedCommentForm
               hideReplyForm={hideReplyForm}
               parentCommentId={comment.id}
@@ -106,17 +109,18 @@ export default function Comment({ comment, setComments }) {
         sx={{
           backgroundColor: "transparent",
           textAlign: "center",
-          width: 20,
+          width: 5,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
         <IconButton onClick={handleToggleExpand}>
-          <ExpandIcon />
+          <ExpandIcon
+          />
         </IconButton>
       </Box>
-      <Box sx={{ pl: 2, pt: 1 }}>
+      <Box sx={{ pl: 1.5, pt: 1 }}>
         <i>comment collapsed</i>
       </Box>
     </Box>
