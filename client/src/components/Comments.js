@@ -34,9 +34,8 @@ export default function Comments({ comments, setComments }) {
         textAlign: "left",
         minWidth: 275,
         maxWidth: 1000,
-        px: 3,
         pt: 1,
-        pb: 3,
+        pb: 1,
         borderRadius: 1,
       }}
     >

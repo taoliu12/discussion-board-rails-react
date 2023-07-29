@@ -88,6 +88,7 @@ export default function PostShow({ loggedInUser }) {
     <>
       {post && (
         <Card
+          className="post-card"
           sx={{
             display: "flex",
             textAlign: "center",
@@ -95,9 +96,11 @@ export default function PostShow({ loggedInUser }) {
             marginY: "15px",
           }}
           variant="outlined"
-          className="post-card"
         >
-          <Box sx={{ py:2, backgroundColor: '#f8f9fa'}} className='votesBox-container'>
+          <Box
+            sx={{ py: 2, backgroundColor: "#f8f9fa" }}
+            className="votesBox-container"
+          >
             <VotesBox post={post} loggedInUser={loggedInUser} />
           </Box>
           <Box
@@ -142,7 +145,17 @@ export default function PostShow({ loggedInUser }) {
           </Box>
         </Card>
       )}
-      <Box m="left" sx={{ textAlign: "left", minWidth: 275, maxWidth: 1000 }}>
+      <Box  className="comments-container"
+      m="left"       sx={{
+        backgroundColor: 'white',
+        textAlign: "left",
+        minWidth: 275,
+        maxWidth: 1000,
+        px: 3,
+        pt: 1,
+        pb: 3,
+        borderRadius: 1,
+      }}>
         {loggedInUser ? (
           <NewCommentForm setComments={setComments} />
         ) : (

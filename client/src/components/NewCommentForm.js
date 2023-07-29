@@ -62,7 +62,7 @@ export default function NewCommentForm({
             value={parentCommentId}
             {...register("parent_comment_id")}
           />
-          <div>
+          <div style={{paddingTop: 5}}>
             <input type="submit" className="submit-btn small" value="Submit" />
           </div>
           <p> {customError}</p>
