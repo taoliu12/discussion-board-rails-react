@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import LoadingButton from '@mui/lab/LoadingButton';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Posts({loggedInUser}) {
   const [posts, setPosts] = useState(null);
@@ -49,7 +50,7 @@ export default function Posts({loggedInUser}) {
       
       {posts ? posts.map((post) => (  //wait until both posts && loggedInUser are loaded, otherwise get error in devtools sometimes
         <PostCard loggedInUser={loggedInUser} post={post} key={post.id}/>)
-        ) : <p><LoadingButton loading sx={{my: '30px', fontSize: '20px'}}/></p>}
+        ) : <p><CircularProgress style={{ marginTop: 81, width: 45, height: 45 }} /></p>}
         </Box>     
   );
 }

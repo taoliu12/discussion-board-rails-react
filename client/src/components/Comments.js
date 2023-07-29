@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import LoadingButton from "@mui/lab/LoadingButton";
+import CircularProgress from '@mui/material/CircularProgress';
 import Comment from "./Comment";
 
 export default function Comments({ comments, setComments }) {
@@ -60,7 +60,7 @@ export default function Comments({ comments, setComments }) {
           })
       ) : (
         <p>
-          <LoadingButton loading sx={{ my: "30px", fontSize: "20px" }} />
+          <CircularProgress style={{ marginTop: 11, width: 45, height: 45 }} />
         </p>
       )}
     </Box>
