@@ -56,6 +56,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem "google-cloud-storage", "~> 1.31", ">= 1.31.1", require: false
+# gem "google-cloud-storage", "~> 1.31", ">= 1.31.1", require: false
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
