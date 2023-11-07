@@ -6,7 +6,7 @@ export default function MyPosts({loggedInUser}) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => { 
-    loggedInUser && fetch(`/users/${loggedInUser.id}/posts`)
+    loggedInUser && fetch(`/api/users/${loggedInUser.id}/posts`)
     .then((res) => res.json())     
     .then((posts) => setPosts(posts.data))
     .catch((err) => console.log(err));     

@@ -24,7 +24,11 @@ function App() {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    fetch("/userInSession")
+    console.log(process.env.REACT_APP_API);
+    fetch('/api' + "/userInSession", {
+      method: 'GET',
+      credentials: 'include'
+    })
       .then((r) => r.json())
       .then((userAlreadyLoggedIn) => {
         userAlreadyLoggedIn.data &&
@@ -33,7 +37,7 @@ function App() {
   }, []);
 
   const handleLogout = () => {
-    fetch("/logout", { method: "DELETE" })
+    fetch('/api' + "/logout", { method: "DELETE" })
       .then((r) => r.json())
       .then((json) => {
         setLoggedInUser(null);

@@ -18,7 +18,7 @@ export default function SignupForm({ setLoggedInUser }) {
   const navigate = useNavigate();
 
   const handleLoginSubmit = (userToLogin) => {
-    fetch("/signup", {
+    fetch('/api' + "/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ user: userToLogin }),
@@ -37,7 +37,7 @@ export default function SignupForm({ setLoggedInUser }) {
   };
 
   const handleLogout = () => {
-    fetch("/logout", { method: "DELETE" })
+    fetch('/api' + "/logout", { method: "DELETE" })
       .then((r) => r.json())
       .then((deleteResponse) => {
         //// Pesimistic Rendering

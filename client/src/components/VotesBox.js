@@ -47,7 +47,7 @@ export default function VotesBox({ post, loggedInUser }) {
   }, [loggedInUser, post]);
 
   const handleUpVote = () => {
-    fetch(`/posts/${post.id}/votes`, {
+    fetch(`/api/posts/${post.id}/votes`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ vote: { value: 1 } }),
@@ -64,7 +64,7 @@ export default function VotesBox({ post, loggedInUser }) {
   };
 
   const handleDownVote = () => {
-    fetch(`/posts/${post.id}/votes`, {
+    fetch(`/api/posts/${post.id}/votes`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ vote: { value: -1 } }),

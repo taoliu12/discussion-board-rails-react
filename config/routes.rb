@@ -34,4 +34,7 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     delete '/logout', to: 'sessions#destroy'
   end
+  
+  # Route to serve React app for unspecified routes
+  get '*path', to: 'react_app#index', constraints: -> (req) { !req.xhr? && req.format.html? }
 end
