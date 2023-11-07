@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": "https://talkyapi.taoliudev.net",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -17,12 +17,13 @@
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.42.1",
     "react-router-dom": "^6.8.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "5.0.0",
+    "sass": "^1.57.1",
     "web-vitals": "^2.1.4",
-    "sass": "^1.57.1"
+    "yarn": "^1.22.19"
   },
   "scripts": {
-    "start": "PORT=3001 react-scripts start",
+    "start": "BROWSER=none PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -33,19 +34,13 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "@testing-library/react": "^14.0.0"
+    "webpack-cli": "^5.1.4"
   }
 }

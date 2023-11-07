@@ -22,7 +22,7 @@ export default function NewCommentForm({
   };
 
   const handleFormSubmit = (data) => {
-    fetch(`/posts/${postId}/comments`, {
+    fetch(`/api/posts/${postId}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -34,7 +34,7 @@ export default function NewCommentForm({
           console.log("new comment submitted", json);
           setComments(comments);
           reset({ content: "" });
-          hideReplyForm();
+          //hideReplyForm();
         } else {
           setCustomError("Something went wrong. Please try again.");
           reset({ content: "" });

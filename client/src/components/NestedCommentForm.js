@@ -22,7 +22,7 @@ export default function NestedCommentForm({
   };
 
   const handleFormSubmit = (data) => {
-    fetch(`/posts/${postId}/comments`, {
+    fetch(`/api/posts/${postId}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

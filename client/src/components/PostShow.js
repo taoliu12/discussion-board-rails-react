@@ -32,7 +32,7 @@ export default function PostShow({ loggedInUser }) {
   };
 
   useEffect(() => {
-    fetch(`/posts/${postId}`)
+    fetch(`/api/posts/${postId}`)
       .then((res) => res.json())
       .then((json) => {
         console.log("postshow json", json);
@@ -53,7 +53,7 @@ export default function PostShow({ loggedInUser }) {
 
   const handleDeletePost = () => {
     // debugger
-    fetch(`${post.id}`, {
+    fetch(`/api${post.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
