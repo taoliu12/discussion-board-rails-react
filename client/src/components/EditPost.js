@@ -20,29 +20,12 @@ export default function EditPostForm({posts, loggedInUser}) {
   useEffect(() => {
     post && setValue('title', post.attributes.title);
     post && setValue('body', post.attributes.body);
-    //  post && setValue([{title: 'aaa'}]);
   }, [post]);
 
-  // useEffect(() => {
-  //   // debugger
-  //   posts?.forEach(post => {
-  //     // debugger
-  //     if (post.id == postId) {
-  //       setPost(post)
-  //     }
-  //   })
-  // }, []);
-  
-
-
-  console.log('edit post', post)
-  // console.log('edit posts', posts)
-  console.log('edit loggedInUser', loggedInUser)
-
   const handleFormSubmit = ( data ) =>  {  
-    fetch('/api' + "/posts", 
+    fetch(`/api/posts/${postId}`, 
       {
-        method: "POST",
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify( {post: data} )
       } 

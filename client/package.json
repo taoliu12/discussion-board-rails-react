@@ -2,7 +2,8 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://talkyapi.taoliudev.net",
+  "proxy": "http://localhost:3000",
+  "proxy2": "https://talkyapi.taoliudev.net",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

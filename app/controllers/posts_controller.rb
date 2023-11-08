@@ -33,12 +33,13 @@ class PostsController < ApplicationController
   end
 
   def update     
+    # byebug 
     @post.update(post_params)
     if @post.save
-      redirect_to post_path(@post)
+      render json: PostSerializer.new(@post)
     else
-      render :edit
-    end  
+      render json: {error: "Something went wrong"}
+    end
   end
 
   def destroy  

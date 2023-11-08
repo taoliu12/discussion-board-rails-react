@@ -53,7 +53,7 @@ export default function PostShow({ loggedInUser }) {
 
   const handleDeletePost = () => {
     // debugger
-    fetch(`/api${post.id}`, {
+    fetch(`/api/posts/${post.id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
